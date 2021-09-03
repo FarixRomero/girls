@@ -18,20 +18,6 @@
                     <div class="card-header">
                         <span class="card-title">Create File</span>
                     </div>
-                    {{-- <div class="card-body">
-                        <form method="POST" action="{{ route('admin.files.store') }}"  role="form" enctype="multipart/form-data">
-                            @csrf
-                            <div class="card-body">
-                                <input type="file" name="file" id="">
-                                <button type="submit" class="btn btn-primary">Subir imagen</button>
-                            </div>
-                            @error('file')
-                                    {{$message}}
-                            @enderror
-
-                        </form>
-                    </div>
-                </div> --}}
                     <form method="POST" action="{{ route('admin.files.store') }}" action="/file-upload"
                         class="dropzone" id="subir-imagenes">
                     </form>

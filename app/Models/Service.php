@@ -42,7 +42,7 @@ class Service extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id','telofono','titulo','nombre','edad','twitter','is_independiente','tarifa_hora','horario'];
+    protected $fillable = ['user_id','texto','telofono','titulo','nombre','edad','twitter','is_independiente','tarifa_hora','horario'];
 
 
     /**
