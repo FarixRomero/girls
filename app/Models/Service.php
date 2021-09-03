@@ -36,10 +36,13 @@ class Service extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function advertisementServices()
-    {
-        return $this->hasMany('App\Models\AdvertisementService', 'service_id', 'id');
-    }
+    // public function advertisementServices()
+    // {
+    //     return $this->hasMany('App\Models\AdvertisementService', 'service_id', 'id');
+    // }
     
-
+    public function advertisement()
+    {
+      return $this->belongsToMany('App\Models\Advertisement', 'advertisement_services'); // assuming user_id and task_id as fk
+    }
 }

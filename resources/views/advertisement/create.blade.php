@@ -10,56 +10,46 @@
     <section class="content container-fluid">
         <div class="row">
             <div class="container">
-
-                @includeif('partials.errors')
-
-                {{-- <div class="card card-default"> --}}
                 <div class="card-header">
                     <span class="card-title">Publicar anuncio</span>
                 </div>
-                {{-- <div class="card-body"> --}}
-                <form method="POST" action="{{ route('advertisements.store') }}" role="form" enctype="multipart/form-data">
+                <div class="box-body">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <span class="card-title">Create File</span>
+                        </div>
+                        <form method="POST" action="{{ route('admin.files.store') }}" action="/file-upload"
+                            class="dropzone" id="subir-imagenes">
+                        </form>
+                        <div class="card-body">
+                            Sube Videos
+                        </div>
+                        <form method="POST" action="{{ route('admin.files.storevideo') }}" action="/file-upload"
+                            class="dropzone" id="subir-videos">
+                        </form>
+                    </div>
+                    <div class="box-footer mt20">
+                        <button type="submit" id="submit-all" class="btn btn-primary btn-xs m-2">Upload the file</button>
+                    </div>
+                </div>
+
+                @includeif('partials.errors')
+
+
+                <form method="POST" action="{{ route('advertisements.store') }}" role="form"
+                    enctype="multipart/form-data">
                     @csrf
 
                     @include('advertisement.form')
-                
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary">
-                            <input type="checkbox" name="countries[]" value="1" autocomplete="off"> España
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="checkbox" name="countries[]" value="2" autocomplete="off"> Francia
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="checkbox" name="countries[]" value="3" autocomplete="off"> Portugal
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="checkbox" name="countries[]" value="4" autocomplete="off"> Italia
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="checkbox" name="countries[]" value="5" autocomplete="off"> Alemania
-                        </label>
-                    </div>
+
+                 
+
                 </form>
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Create File</span>
-                    </div>
-                    <form method="POST" action="{{ route('admin.files.store') }}" action="/file-upload"
-                        class="dropzone" id="subir-imagenes">
-                    </form>
-                    <div class="card-body">
-                        Sube Videos
-                    </div>
-                    <form method="POST" action="{{ route('admin.files.storevideo') }}" action="/file-upload"
-                        class="dropzone" id="subir-videos">
-                    </form>
-                </div>
-                {{-- </div> --}}
-                {{-- </div> --}}
+
             </div>
         </div>
     </section>
+
 @endsection
 
 @section('js')
@@ -69,8 +59,21 @@
     <script>
         Dropzone.options.subirImagenes = {
             acceptedFiles: 'image/*',
+            autoProcessQueue: false,
+            uploadMultiple: true,
+            parallelUploads: 6,
+            maxFiles: 6,
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            init: function() {
+                var myDropzone = this;
+
+                $("#submit-all").click(function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    myDropzone.processQueue();
+                });
             }
         };
         Dropzone.options.subirVideos = {

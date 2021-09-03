@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Advertisement;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class AdvertisementController extends Controller
     public function create()
     {
         $advertisement = new Advertisement();
-        return view('advertisement.create', compact('advertisement'));
+        $services = Service::get();
+        return view('advertisement.create', compact('advertisement','services'));
     }
 
     /**
@@ -44,8 +46,13 @@ class AdvertisementController extends Controller
     public function store(Request $request)
     {
         request()->validate(Advertisement::$rules);
-        $request['user_id']=auth()->user()->id;
-        $advertisement = Advertisement::create($request->all());
+        $data = $request->all();
+        $data['user_id']=auth()->user()->id;
+        $advertisement = Advertisement::create($data);
+        if(isset($data['services'])){
+            $advertisement->services()->attach($data['services']);
+          }
+
 
         return redirect()->route('advertisements.index')
             ->with('success', 'Advertisement created successfully.');
@@ -73,8 +80,8 @@ class AdvertisementController extends Controller
     public function edit($id)
     {
         $advertisement = Advertisement::find($id);
-
-        return view('advertisement.edit', compact('advertisement'));
+        $services = Service::get();
+        return view('advertisement.edit', compact('advertisement','services'));
     }
 
     /**
@@ -86,10 +93,14 @@ class AdvertisementController extends Controller
      */
     public function update(Request $request, Advertisement $advertisement)
     {
+        $data = $request->all();
         request()->validate(Advertisement::$rules);
-
         $advertisement->update($request->all());
-
+        // dd($data['services']);
+        if(isset($data['services'])){
+            $advertisement->services()->sync($data['services']);
+            // dd($advertisement->toArray());
+        }
         return redirect()->route('advertisements.index')
             ->with('success', 'Advertisement updated successfully');
     }
@@ -101,6 +112,7 @@ class AdvertisementController extends Controller
      */
     public function destroy($id)
     {
+        $advertisement = Advertisement::find($id)->services()->detach ();
         $advertisement = Advertisement::find($id)->delete();
 
         return redirect()->route('advertisements.index')

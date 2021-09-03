@@ -26,12 +26,17 @@ Auth::routes();
 // Route::resource('/admin/files', FileController::class)->names('admin.files');
 Route::resource('/services', ServiceController::class);
 Route::resource('/advertisements', AdvertisementController::class);
+Route::get('/user/index/{slug}', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/storeVideo', [FileController::class, 'storeVideo'])->name('admin.files.storevideo');
-    // Route::get('/storeVideo', [FileController::class, 'storeVideo'])->name('admin.files.storevideo');
-
     Route::resource('files', FileController::class)->names('admin.files');
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user/panel', [App\Http\Controllers\UserController::class, 'controlPanel'])->name('user.panel');
+   
 });
 // Route::resource('/admin/files','Admin\FileController');

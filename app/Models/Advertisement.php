@@ -54,6 +54,9 @@ class Advertisement extends Model
     {
         return $this->hasOne('App\Models\User', 'id', 'user_id');
     }
-    
+    public function services()
+    {
+      return $this->belongsToMany('App\Models\Service', 'advertisement_services'); // assuming user_id and task_id as fk
+    }
 
 }

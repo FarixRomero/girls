@@ -46,20 +46,28 @@ class FileController extends Controller
         // $request->validate(
         //     ['file' => 'required']
         // );
-        $nombre = Str::random(10) . '-' . $request->file('file')->getClientOriginalName();
-        $ruta = storage_path() . '\app\public\imagenes/' . $nombre;
-        Image::make($request->file('file'))->save($ruta);
+        // dd($request);
+        foreach ($request['file'] as $file) {
 
-        // $imagen = $request->file('file')->store('public/imagenes');
-        
-        // $url = Storage::url($imagen);
-        
-        $file = File::create([
-            'url' => '/storage/imagenes/' . $nombre,
-            'user_id' => auth()->user()->id,
-            'tipo'=>1,
+            // $nombre = Str::random(10) . '-' . $request->file('file')->getClientOriginalName();
+            // $ruta = storage_path() . '\app\public\imagenes/' . $nombre;
+            // Image::make($request->file('file'))->save($ruta);
+            $nombre = Str::random(10) . '-' . $file->getClientOriginalName();
+            $ruta = storage_path() . '\app\public\imagenes/' . $nombre;
+            Image::make($file)->save($ruta);
 
-        ]);
+            // $imagen = $request->file('file')->store('public/imagenes');
+
+            // $url = Storage::url($imagen);
+
+            File::create([
+                'url' => '/storage/imagenes/' . $nombre,
+                'user_id' => auth()->user()->id,
+                'tipo' => 1,
+
+            ]);
+        }
+
         // $file = File::create([
         //     'url' =>  $url,
         //     'tipo'=>1,
@@ -68,16 +76,16 @@ class FileController extends Controller
     }
     public function storeVideo(Request $request)
     {
-       $imagen = $request->file('file')->store('public/imagenes');
-       $url = Storage::url($imagen);
-       $file = File::create([
-        'url' =>  $url,
-        'tipo'=>2,
-        'user_id' => auth()->user()->id
-    ]);
+        $imagen = $request->file('file')->store('public/imagenes');
+        $url = Storage::url($imagen);
+        $file = File::create([
+            'url' =>  $url,
+            'tipo' => 2,
+            'user_id' => auth()->user()->id
+        ]);
     }
-    
-    
+
+
     /**
      * Display the specified resource.
      *

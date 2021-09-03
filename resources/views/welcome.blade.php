@@ -1,4 +1,6 @@
 @extends('layouts.app')
+{{-- @extends('adminlte::page') --}}
+
 @section('content')
     <div class="container-fluid">
         {{-- <div class="row"> --}}
@@ -7,20 +9,27 @@
         <!-- Page Content -->
         {{-- <div class="container"> --}}
 
-        <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Thumbnail Gallery</h1>
-
-        <hr class="mt-2 mb-5">
+        {{-- <h1 class="fw-light text-center text-lg-start mt-4 mb-0">
+            <img class="img-fluid" src={{asset('/storage/imagenes/logoAQP.png')}} style="width: 20%" alt="">
+        </h1> --}}
+        {{-- <hr class="mt-2 mb-5"> --}}
 
         <div class="row text-center text-lg-start">
-
-
             @foreach ($users as $user)
                 @if ($user->files()->where('tipo', 1)->first())
                     @if ($file = $user->files()->where('tipo', 1)->first())
                         <div class="col-lg-2 col-md-5 col-6">
-                            <a data-toggle="modal" data-target="#exampleModalLong{{ $file->id }}">
+                            {{-- <a data-toggle="modal" data-target="#exampleModalLong{{ $file->id }}"> --}}
+                               <a href="{{route('user.index',$user->slug)}}">
                                 <img class="img-fluid img-thumbnail" src="{{ asset($file->url) }}" alt="">
+                                <h4>{{$user->advertisement->titulo}}</h4>
+                                <h2 class="btn btn-secondary">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    {{$user->advertisement->telofono}}</h2>
+                                <h2 class="btn btn-secondary">{{$user->advertisement->edad}} años</h2>
                             </a>
+                            {{-- </a> --}}
+                           
                         </div>
                         <div class="modal fade" id="exampleModalLong{{ $file->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLongTitle{{ $file->url }}" aria-hidden="true">
@@ -53,39 +62,6 @@
 
         </div>
 
-    </div>
-    {{-- @foreach ($files as $file)
-        @if ($file->tipo == 1) --}}
-    {{-- <div class="card">
-
-                                <a data-toggle="modal" data-target="#exampleModalLong{{ $file->id }}">
-                                    <img class="img-fluid" src="{{ asset($file->url) }}" alt="">
-                                </a>
-                                <span>{{ $file->user->advertisement->telofono }}</span>
-                                <button type="button" class="___class_+?6___" data-toggle="modal"
-                                    data-target="#exampleModalLong{{ $file->id }}">
-                                    Launch demo modal
-                                </button>
-                                <!-- Modal -->
-                                
-                            </div> --}}
-
-
-
-    {{-- @else --}}
-    {{-- <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="{{ asset($file->url) }}" allowfullscreen
-                                    sandbox></iframe>
-                            </div>
-
-
-                            <span>{{ $file->user->advertisement->telofono }}</span> --}}
-
-    {{-- @endif --}}
-    {{-- @endforeach --}}
-    </div>
-    </div>
-    </div>
     </div>
 @endsection
 @section('css')

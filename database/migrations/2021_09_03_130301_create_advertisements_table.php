@@ -19,14 +19,13 @@ class CreateAdvertisementsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('telofono');
             $table->string('titulo');
-            $table->string('texto');
+            $table->text('texto');
             $table->string('nombre')->nullable();
-            $table->unsignedInteger('edad')->nullable();
+            $table->unsignedInteger('edad');
             $table->string('twitter')->nullable();
             $table->boolean('is_independiente');
             $table->float('tarifa_hora')->nullable();
             $table->string('horario');
-            // $table->string('horario');
             $table->timestamps();
         });
     }
