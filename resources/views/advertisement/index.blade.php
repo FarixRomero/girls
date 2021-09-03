@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Service
+    Advertisement
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Service') }}
+                                {{ __('Advertisement') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('services.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('advertisements.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,22 +36,40 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Descripcion</th>
+										<th>User Id</th>
+										<th>Telofono</th>
+										<th>Titulo</th>
+										<th>Texto</th>
+										<th>Nombre</th>
+										<th>Edad</th>
+										<th>Twitter</th>
+										<th>Is Independiente</th>
+										<th>Tarifa Hora</th>
+										<th>Horario</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($services as $service)
+                                    @foreach ($advertisements as $advertisement)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $service->descripcion }}</td>
+											<td>{{ $advertisement->user_id }}</td>
+											<td>{{ $advertisement->telofono }}</td>
+											<td>{{ $advertisement->titulo }}</td>
+											<td>{{ $advertisement->texto }}</td>
+											<td>{{ $advertisement->nombre }}</td>
+											<td>{{ $advertisement->edad }}</td>
+											<td>{{ $advertisement->twitter }}</td>
+											<td>{{ $advertisement->is_independiente }}</td>
+											<td>{{ $advertisement->tarifa_hora }}</td>
+											<td>{{ $advertisement->horario }}</td>
 
                                             <td>
-                                                <form action="{{ route('services.destroy',$service->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('services.show',$service->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('services.edit',$service->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('advertisements.destroy',$advertisement->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('advertisements.show',$advertisement->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('advertisements.edit',$advertisement->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -64,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $services->links() !!}
+                {!! $advertisements->links() !!}
             </div>
         </div>
     </div>

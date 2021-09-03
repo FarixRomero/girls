@@ -8,19 +8,11 @@ use Illuminate\Database\Eloquent\Model;
  * Class Service
  *
  * @property $id
- * @property $user_id
- * @property $telofono
- * @property $titulo
- * @property $nombre
- * @property $edad
- * @property $twitter
- * @property $is_independiente
- * @property $tarifa_hora
- * @property $horario
+ * @property $descripcion
  * @property $created_at
  * @property $updated_at
  *
- * @property User $user
+ * @property AdvertisementService[] $advertisementServices
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -28,11 +20,7 @@ class Service extends Model
 {
     
     static $rules = [
-		// 'user_id' => 'required',
-		'telofono' => 'required',
-		'titulo' => 'required',
-		'is_independiente' => 'required',
-		'horario' => 'required',
+		'descripcion' => 'required',
     ];
 
     protected $perPage = 20;
@@ -42,15 +30,15 @@ class Service extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id','texto','telofono','titulo','nombre','edad','twitter','is_independiente','tarifa_hora','horario'];
+    protected $fillable = ['descripcion'];
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function user()
+    public function advertisementServices()
     {
-        return $this->hasOne('App\Models\User', 'id', 'user_id');
+        return $this->hasMany('App\Models\AdvertisementService', 'service_id', 'id');
     }
     
 

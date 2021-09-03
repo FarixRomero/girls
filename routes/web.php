@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AdvertisementController;
 use App\Models\Service;
 use GuzzleHttp\Middleware;
 
@@ -24,6 +25,7 @@ Auth::routes();
 
 // Route::resource('/admin/files', FileController::class)->names('admin.files');
 Route::resource('/services', ServiceController::class);
+Route::resource('/advertisements', AdvertisementController::class);
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

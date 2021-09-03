@@ -12,9 +12,9 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default">
-                    {{-- <div class="card-header">
+                    <div class="card-header">
                         <span class="card-title">Update Service</span>
-                    </div> --}}
+                    </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('services.update', $service->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}

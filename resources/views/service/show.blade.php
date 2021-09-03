@@ -21,40 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>User Id:</strong>
-                            {{ $service->user_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Telofono:</strong>
-                            {{ $service->telofono }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Titulo:</strong>
-                            {{ $service->titulo }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Nombre:</strong>
-                            {{ $service->nombre }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Edad:</strong>
-                            {{ $service->edad }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Twitter:</strong>
-                            {{ $service->twitter }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Is Independiente:</strong>
-                            {{ $service->is_independiente }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Tarifa Hora:</strong>
-                            {{ $service->tarifa_hora }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Horario:</strong>
-                            {{ $service->horario }}
+                            <strong>Descripcion:</strong>
+                            {{ $service->descripcion }}
                         </div>
 
                     </div>

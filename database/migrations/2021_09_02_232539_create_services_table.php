@@ -15,18 +15,7 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('telofono');
-            $table->string('titulo');
-            $table->string('texto');
-            $table->string('nombre')->nullable();
-            $table->unsignedInteger('edad')->nullable();
-            $table->string('twitter')->nullable();
-            $table->boolean('is_independiente');
-            $table->float('tarifa_hora')->nullable();
-            $table->string('horario');
-            // $table->string('horario');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
