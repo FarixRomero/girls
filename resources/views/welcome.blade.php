@@ -15,37 +15,40 @@
 
 
             @foreach ($users as $user)
-                @if ($user->files->first()->tipo == 1)
-
-                    <div class="col-lg-2 col-md-5 col-6">
-                        <a data-toggle="modal" data-target="#exampleModalLong{{$user->files->first()->id }}">
-                            <img class="img-fluid img-thumbnail" src="{{ asset($user->files->first()->url) }}" alt="">
-                        </a>
-                    </div>
-                    <div class="modal fade" id="exampleModalLong{{ $user->files->first()->id }}" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLongTitle{{$user->files->first()->url }}" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle{{$user->files->first()->url }}">
-                                        {{ $user->files->first()->url }}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span>{{ $user->service->telofono}}</span>
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                @if ($user->files()->where('tipo', 1)->first())
+                    @if ($file = $user->files()->where('tipo', 1)->first())
+                        <div class="col-lg-2 col-md-5 col-6">
+                            <a data-toggle="modal" data-target="#exampleModalLong{{ $file->id }}">
+                                <img class="img-fluid img-thumbnail" src="{{ asset($file->url) }}" alt="">
+                            </a>
+                        </div>
+                        <div class="modal fade" id="exampleModalLong{{ $file->id }}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLongTitle{{ $file->url }}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle{{ $file->url }}">
+                                            {{ $file->url }}</h5>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span>{{ $user->advertisement->telofono }}</span>
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    @endif
                 @endif
+
             @endforeach
 
         </div>
@@ -53,12 +56,12 @@
     </div>
     {{-- @foreach ($files as $file)
         @if ($file->tipo == 1) --}}
-            {{-- <div class="card">
+    {{-- <div class="card">
 
                                 <a data-toggle="modal" data-target="#exampleModalLong{{ $file->id }}">
                                     <img class="img-fluid" src="{{ asset($file->url) }}" alt="">
                                 </a>
-                                <span>{{ $file->user->service->telofono }}</span>
+                                <span>{{ $file->user->advertisement->telofono }}</span>
                                 <button type="button" class="___class_+?6___" data-toggle="modal"
                                     data-target="#exampleModalLong{{ $file->id }}">
                                     Launch demo modal
@@ -69,16 +72,16 @@
 
 
 
-        {{-- @else --}}
-            {{-- <div class="embed-responsive embed-responsive-16by9">
+    {{-- @else --}}
+    {{-- <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="{{ asset($file->url) }}" allowfullscreen
                                     sandbox></iframe>
                             </div>
 
 
-                            <span>{{ $file->user->service->telofono }}</span> --}}
+                            <span>{{ $file->user->advertisement->telofono }}</span> --}}
 
-        {{-- @endif --}}
+    {{-- @endif --}}
     {{-- @endforeach --}}
     </div>
     </div>
@@ -86,5 +89,5 @@
     </div>
 @endsection
 @section('css')
-   
+
 @endsection

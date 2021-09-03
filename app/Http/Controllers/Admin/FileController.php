@@ -117,7 +117,7 @@ class FileController extends Controller
 
         $file->update($request->all());
 
-        return redirect()->route('Admin/files.index')
+        return redirect()->route('admin.files.index')
             ->with('success', 'File updated successfully');
     }
 
@@ -130,7 +130,7 @@ class FileController extends Controller
     {
         $file = File::find($id)->delete();
 
-        return redirect()->route('Admin/files.index')
+        return redirect()->route('admin.files.index')
             ->with('success', 'File deleted successfully');
     }
 }

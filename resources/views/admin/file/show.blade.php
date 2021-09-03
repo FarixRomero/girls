@@ -14,7 +14,7 @@
                             <span class="card-title">Show File</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('Admin/files.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.files.index') }}"> Back</a>
                         </div>
                     </div>
 

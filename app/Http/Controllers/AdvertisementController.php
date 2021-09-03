@@ -44,7 +44,7 @@ class AdvertisementController extends Controller
     public function store(Request $request)
     {
         request()->validate(Advertisement::$rules);
-
+        $request['user_id']=auth()->user()->id;
         $advertisement = Advertisement::create($request->all());
 
         return redirect()->route('advertisements.index')

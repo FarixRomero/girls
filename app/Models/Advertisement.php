@@ -29,7 +29,7 @@ class Advertisement extends Model
 {
     
     static $rules = [
-		'user_id' => 'required',
+		// 'user_id' => 'required',
 		'telofono' => 'required',
 		'titulo' => 'required',
 		'texto' => 'required',
