@@ -43,7 +43,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function files(){
-        return $this->hasMany('App\File');
+        return $this->hasMany(File::class);
 
+    }
+    public function service(){
+        return $this->hasOne(Service::class);
     }
 }

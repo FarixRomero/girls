@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\File;
+use App\Models\User;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $files=File::all();
-        return view('welcome',compact('files'));
+        $users=User::with('files')->get();
+        // dd($users->toArray());
+        return view('welcome',compact('users'));
     }
 }

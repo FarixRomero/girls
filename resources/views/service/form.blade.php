@@ -37,6 +37,10 @@
                     {!! $errors->first('twitter', '<div class="invalid-feedback">:message</p>') !!}
                 </div>
                 <div class="form-group">
+                    <span >Texto</span>
+                    <input type="text" class="form-control" value="texto" id="texto" name="texto">
+                </div>
+                <div class="form-group">
                     {{ Form::label('is_independiente') }}
                     {{ Form::text('is_independiente', $service->is_independiente, ['class' => 'form-control' . ($errors->has('is_independiente') ? ' is-invalid' : ''), 'placeholder' => 'Is Independiente']) }}
                     {!! $errors->first('is_independiente', '<div class="invalid-feedback">:message</p>') !!}

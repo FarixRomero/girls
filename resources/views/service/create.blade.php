@@ -14,17 +14,48 @@
                 @includeif('partials.errors')
 
                 {{-- <div class="card card-default"> --}}
-                    <div class="card-header">
-                        <span class="card-title">Publicar anuncio</span>
+                <div class="card-header">
+                    <span class="card-title">Publicar anuncio</span>
+                </div>
+                {{-- <div class="card-body"> --}}
+                <form method="POST" action="{{ route('services.store') }}" role="form" enctype="multipart/form-data">
+                    @csrf
+
+                    @include('service.form')
+                
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary">
+                            <input type="checkbox" name="countries[]" value="1" autocomplete="off"> España
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="checkbox" name="countries[]" value="2" autocomplete="off"> Francia
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="checkbox" name="countries[]" value="3" autocomplete="off"> Portugal
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="checkbox" name="countries[]" value="4" autocomplete="off"> Italia
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="checkbox" name="countries[]" value="5" autocomplete="off"> Alemania
+                        </label>
                     </div>
-                    {{-- <div class="card-body"> --}}
-                        <form method="POST" action="{{ route('services.store') }}"  role="form" enctype="multipart/form-data">
-                            @csrf
-
-                            @include('service.form')
-
-                        </form>
-                    {{-- </div> --}}
+                </form>
+                <div class="card card-default">
+                    <div class="card-header">
+                        <span class="card-title">Create File</span>
+                    </div>
+                    <form method="POST" action="{{ route('admin.files.store') }}" action="/file-upload"
+                        class="dropzone" id="subir-imagenes">
+                    </form>
+                    <div class="card-body">
+                        Sube Videos
+                    </div>
+                    <form method="POST" action="{{ route('admin.files.storevideo') }}" action="/file-upload"
+                        class="dropzone" id="subir-videos">
+                    </form>
+                </div>
+                {{-- </div> --}}
                 {{-- </div> --}}
             </div>
         </div>

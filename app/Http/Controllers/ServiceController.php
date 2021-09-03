@@ -43,6 +43,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         request()->validate(Service::$rules);
         $request['user_id']=auth()->user()->id;
         $service = Service::create($request->all());
