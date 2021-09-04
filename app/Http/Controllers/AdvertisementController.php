@@ -104,6 +104,19 @@ class AdvertisementController extends Controller
         return redirect()->route('advertisements.index')
             ->with('success', 'Advertisement updated successfully');
     }
+    public function updateByUser(Request $request, Advertisement $advertisement)
+    {
+        $data = $request->all();
+        request()->validate(Advertisement::$rules);
+        $advertisement->update($request->all());
+        // dd($data['services']);
+        if(isset($data['services'])){
+            $advertisement->services()->sync($data['services']);
+            // dd($advertisement->toArray());
+        }
+        return redirect()->route('advertisements.index')
+            ->with('success', 'Advertisement updated successfully');
+    }
 
     /**
      * @param int $id

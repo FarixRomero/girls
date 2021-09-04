@@ -138,7 +138,6 @@ class FileController extends Controller
     {
         $file = File::find($id)->delete();
 
-        return redirect()->route('admin.files.index')
-            ->with('success', 'File deleted successfully');
+        return redirect()->back();
     }
 }

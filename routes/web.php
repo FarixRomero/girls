@@ -7,7 +7,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AdvertisementController;
 use App\Models\Service;
 use GuzzleHttp\Middleware;
-
+use App\Http\Middleware\CheckAdvertisementCreated;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +19,7 @@ use GuzzleHttp\Middleware;
 |
 */
 
-Route::get('/', [HomeController::class,'index']);
+Route::get('/', [HomeController::class, 'index']);
 
 Auth::routes();
 
@@ -34,9 +34,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('files', FileController::class)->names('admin.files');
 });
 
+Route::middleware(['auth', CheckAdvertisementCreated::class])->group(function () {
+    Route::get('/advertisements/create',  [AdvertisementController::class, 'create'])->name('advertisements.create');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/user/panel', [App\Http\Controllers\UserController::class, 'controlPanel'])->name('user.panel');
-   
 });
 // Route::resource('/admin/files','Admin\FileController');

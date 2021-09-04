@@ -17,7 +17,9 @@ class UserController extends Controller
     {
         // $user=User::where('slug',$slug)->first();
         $user = User::where('slug', $slug)->with('files', 'advertisement')->first();
-        return view('user.index', compact('user'));
+        $userRandom = User::where('slug','!=', $slug)->has('advertisement')->has('files')->inRandomOrder()->first();
+
+        return view('user.index', compact('user','userRandom'));
         //
     }
 

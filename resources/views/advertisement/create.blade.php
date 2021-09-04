@@ -28,9 +28,7 @@
                             class="dropzone" id="subir-videos">
                         </form>
                     </div>
-                    <div class="box-footer mt20">
-                        <button type="submit" id="submit-all" class="btn btn-primary btn-xs m-2">Upload the file</button>
-                    </div>
+                 
                 </div>
 
                 @includeif('partials.errors')
@@ -70,7 +68,7 @@
                 var myDropzone = this;
 
                 $("#submit-all").click(function(e) {
-                    e.preventDefault();
+                    // e.preventDefault();
                     e.stopPropagation();
                     myDropzone.processQueue();
                 });
