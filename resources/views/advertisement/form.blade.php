@@ -39,8 +39,7 @@
             <div class="form-group">
                 <span>Texto</span>
                 {{-- <input type="text" class="form-control" value="{{$advertisement->texto}}" id="texto" name="texto"> --}}
-                <textarea class="form-control" id="texto" rows="5" value="{{ $advertisement->texto }}" name="texto">{{ $advertisement->texto }}
-                </textarea>
+                <textarea spellcheck="true" class="form-control" id="texto" rows="5" value="{{ $advertisement->texto }}" name="texto">{{ $advertisement->texto }}</textarea>
 
             </div>
             {{-- <div class="form-group">
@@ -59,7 +58,9 @@
                     </label>
                 </div>
             </div>
-
+            <div class="form-group">
+            
+            </div>
             <div class="form-group">
                 {{ Form::label('tarifa_hora') }}
                 {{ Form::text('tarifa_hora', $advertisement->tarifa_hora, ['class' => 'form-control' . ($errors->has('tarifa_hora') ? ' is-invalid' : ''), 'placeholder' => 'Tarifa Hora']) }}
