@@ -22,7 +22,15 @@
                             <div class="card">
                                 <a href="{{ route('user.index', $user->slug) }}">
 
-                                    <img class="card-img-top" src="{{ asset($file->url) }}" alt="">
+                                    <figure>
+                                        <div class="model-ribbon">
+                                            <span style="background: red;color: ;font-size: 14px;">NEW</span>
+
+                                        </div>
+                                        <img class="card-img-top" src="{{ asset($file->url) }}" alt="">
+
+                                    </figure>
+
                                     <div class="card-body p-1">
                                         <p class="card-title text-left">{{ $user->advertisement->titulo }}</p>
                                         <p class="card-text">
@@ -60,5 +68,40 @@
     </div>
 @endsection
 @section('css')
+    <style>
+        .model-ribbon {
+            height: 100px;
+            overflow: hidden;
+            pointer-events: none;
+            position: absolute;
+            right: -10px;
+            text-align: right;
+            top: -5px;
+            width: 100px;
+            z-index: 1;
+
+        }
+
+        .model-ribbon span {
+            background: #cc3366 none repeat scroll 0 0;
+            box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+            color: #FFFFFF;
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 30px;
+            font-family: 'Oswald', sans-serif;
+            position: absolute;
+            right: -51px;
+            text-align: center;
+            text-transform: uppercase;
+            top: 19px;
+            transform: rotate(45deg);
+            width: 180px;
+        }
+
+
+
+    </style>
 
 @endsection
