@@ -64,7 +64,9 @@
             @endforeach
 
         </div>
-
+        <div id="app">
+            <example-component></example-component>
+        </div>
     </div>
 @endsection
 @section('css')
