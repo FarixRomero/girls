@@ -48,32 +48,36 @@ class FileController extends Controller
         // );
         // dd($request);
         foreach ($request['file'] as $file) {
-
-            // $nombre = Str::random(10) . '-' . $request->file('file')->getClientOriginalName();
-            // $ruta = storage_path() . '\app\public\imagenes/' . $nombre;
-            // Image::make($request->file('file'))->save($ruta);
+       
             $nombre = Str::random(10) . '-' . $file->getClientOriginalName();
             $ruta = storage_path() . '\app\public\imagenes/' . $nombre;
             Image::make($file)->save($ruta);
 
-            // $imagen = $request->file('file')->store('public/imagenes');
-
-            // $url = Storage::url($imagen);
+             File::create([
+                'url' => '/storage/imagenes/' . $nombre,
+                'user_id' => auth()->user()->id,
+                'tipo' => 1,
+            ]);
+        }
+    }
+    public function storeApi(Request $request)
+    {
+      
+        foreach ($request['file'] as $file) {
+       
+            $nombre = Str::random(10) . '-' . $file->getClientOriginalName();
+            $ruta = storage_path() . '\app\public\imagenes/' . $nombre;
+            Image::make($file)->save($ruta);
 
             File::create([
                 'url' => '/storage/imagenes/' . $nombre,
                 'user_id' => auth()->user()->id,
                 'tipo' => 1,
-
             ]);
         }
-
-        // $file = File::create([
-        //     'url' =>  $url,
-        //     'tipo'=>1,
-        //     'user_id' => auth()->user()->id
-        // ]);
     }
+
+
     public function storeVideo(Request $request)
     {
         $imagen = $request->file('file')->store('public/imagenes');

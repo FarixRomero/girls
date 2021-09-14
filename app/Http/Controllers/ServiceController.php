@@ -23,6 +23,13 @@ class ServiceController extends Controller
         return view('service.index', compact('services'))
             ->with('i', (request()->input('page', 1) - 1) * $services->perPage());
     }
+    public function indexApi()
+    {
+        $services = Service::paginate();
+
+        return response()->json($services);
+
+    }
 
     /**
      * Show the form for creating a new resource.
