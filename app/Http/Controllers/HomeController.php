@@ -28,4 +28,8 @@ class HomeController extends Controller
         // dd($users->toArray());
         return view('welcome',compact('users'));
     }
+    public function indexApi(){
+        $users=User::with('files','advertisement')->get();
+        return response()->json($users);
+    }
 }

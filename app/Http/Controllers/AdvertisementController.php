@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Advertisement;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 /**
  * Class AdvertisementController
@@ -34,7 +35,12 @@ class AdvertisementController extends Controller
     {
         $advertisement = new Advertisement();
         $services = Service::get();
-        return view('advertisement.create', compact('advertisement','services'));
+        return view('advertisement.create', compact('advertisement', 'services'));
+    }
+    public function listServicios()
+    {
+        $services = Service::get();
+        return response()->json($services);
     }
 
     /**
@@ -47,15 +53,34 @@ class AdvertisementController extends Controller
     {
         request()->validate(Advertisement::$rules);
         $data = $request->all();
-        $data['user_id']=auth()->user()->id;
+        $data['user_id'] = auth()->user()->id;
         $advertisement = Advertisement::create($data);
-        if(isset($data['services'])){
+        if (isset($data['services'])) {
             $advertisement->services()->attach($data['services']);
-          }
+        }
 
 
         return redirect()->route('advertisements.index')
             ->with('success', 'Advertisement created successfully.');
+    }
+
+
+
+    public function storeApi(Request $request)
+    {
+        try {
+            request()->validate(Advertisement::$rules);
+            $data = $request->all();
+            $data['user_id'] = auth()->user()->id;
+            $advertisement = Advertisement::create($data);
+            if (isset($data['services'])) {
+                $advertisement->services()->attach($data['services']);
+            }
+            $service = Service::create(["name" => $data["name"]]);
+        } catch (Exception $e) {
+            return response()->json(['status' => "error", 'data' => $e->getMessage()]);
+        }
+        return response()->json(['status' => "ok", 'data' => $advertisement]);
     }
 
     /**
@@ -70,6 +95,11 @@ class AdvertisementController extends Controller
 
         return view('advertisement.show', compact('advertisement'));
     }
+    public function showApi($id)
+    {
+        $advertisement = Advertisement::with(['user', 'user.files'])->find($id);
+        return response()->json($advertisement);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -81,25 +111,16 @@ class AdvertisementController extends Controller
     {
         $advertisement = Advertisement::find($id);
         $services = Service::get();
-        return view('advertisement.edit', compact('advertisement','services'));
+        return view('advertisement.edit', compact('advertisement', 'services'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Advertisement $advertisement
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Advertisement $advertisement)
     {
         $data = $request->all();
         request()->validate(Advertisement::$rules);
         $advertisement->update($request->all());
-        // dd($data['services']);
-        if(isset($data['services'])){
+        if (isset($data['services'])) {
             $advertisement->services()->sync($data['services']);
-            // dd($advertisement->toArray());
         }
         return redirect()->route('advertisements.index')
             ->with('success', 'Advertisement updated successfully');
@@ -109,13 +130,25 @@ class AdvertisementController extends Controller
         $data = $request->all();
         request()->validate(Advertisement::$rules);
         $advertisement->update($request->all());
-        // dd($data['services']);
-        if(isset($data['services'])){
+        if (isset($data['services'])) {
             $advertisement->services()->sync($data['services']);
-            // dd($advertisement->toArray());
         }
         return redirect()->route('advertisements.index')
             ->with('success', 'Advertisement updated successfully');
+    }
+    public function updateApi(Request $request, Advertisement $advertisement)
+    {
+        try {
+            $data = $request->all();
+            request()->validate(Advertisement::$rules);
+            $advertisement->update($request->all());
+            if (isset($data['services'])) {
+                $advertisement->services()->sync($data['services']);
+            }
+        } catch (Exception $e) {
+            return response()->json(['status' => "error", 'data' => $e->getMessage()]);
+        }
+        return response()->json(['status' => "ok", 'data' => $advertisement]);
     }
 
     /**
@@ -125,7 +158,7 @@ class AdvertisementController extends Controller
      */
     public function destroy($id)
     {
-        $advertisement = Advertisement::find($id)->services()->detach ();
+        $advertisement = Advertisement::find($id)->services()->detach();
         $advertisement = Advertisement::find($id)->delete();
 
         return redirect()->route('advertisements.index')
