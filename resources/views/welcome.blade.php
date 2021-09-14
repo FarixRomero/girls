@@ -65,7 +65,11 @@
 
         </div>
         <div id="app">
-            <example-component></example-component>
+            <example-component>
+
+
+            </example-component>
+            <juancito></juancito>
         </div>
     </div>
 @endsection
