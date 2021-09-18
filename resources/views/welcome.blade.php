@@ -69,7 +69,6 @@
 
 
             </example-component>
-            <juancito></juancito>
         </div>
     </div>
 @endsection

@@ -31,17 +31,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'indexApi']);
 
 Route::resource('/services', ServiceController::class);
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'indexApi']);
-Route::get('/services', [App\Http\Controllers\ServiceController::class, 'listServicios']);
+// Route::get('/services', [App\Http\Controllers\ServiceController::class, 'listServicios']);
 
 
 //Advertisment
 
 Route::get('/advertisement/create', [App\Http\Controllers\AdvertisementController::class, 'storeApi']);
 Route::get('/advertisement/show/{id}', [App\Http\Controllers\AdvertisementController::class, 'showApi']);
-Route::get('/advertisement/update/{id}', [App\Http\Controllers\AdvertisementController::class, 'updateApi']);
+Route::post('/advertisement/update/{id}', [App\Http\Controllers\AdvertisementController::class, 'updateApi']);
 
 //file
-Route::get('file/store',[FileController::class, 'store']);
+Route::post('file/store',[FileController::class, 'store']);
 
 
 

@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users=User::with('files','advertisement')->get();
+        $users=User::inRandomOrder()->with('files','advertisement')->get();
         // dd($users->toArray());
         return view('welcome',compact('users'));
     }
