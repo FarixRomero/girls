@@ -1,8 +1,8 @@
 <template>
-<div>
 
- <div>asdadsasdasd</div>
+ <div>asdadsasdasd
     <h3>SOY JUAN</h3>
+    <router-view></router-view>
 </div>
  
 </template>

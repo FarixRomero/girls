@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue').default;
+window.Vue = require("vue").default;
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,8 +19,28 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('juancito', require('./components/juancito.vue').default);
+// import Router from "vue";
+// import Vue from 'vue'
+// Vue.use(VueRouter);
+// Vue.use(Router)
+
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue").default
+);
+Vue.component("juancito", require("./components/juancito.vue").default);
+Vue.component(
+    "header-component",
+    require("./components/HeaderComponent.vue").default
+);
+Vue.component(
+    "searchbar-component",
+    require("./components/SearchBar.vue").default
+);
+Vue.component(
+    "home-component",
+    require("./components/HomeComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28,6 +48,19 @@ Vue.component('juancito', require('./components/juancito.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// import HeaderComponent from "./components/HeaderComponent";
+// import ExampleComponent from "./components/ExampleComponent";
+// import juancito from "./components/juancito";
+
+// const router = new Router({
+//     mode: "history",
+//     routes: [
+//         { path: "/", name:'header',component: HeaderComponent },
+//         { path: "/algo",name:'example', component: ExampleComponent }
+//     ]
+// });
 const app = new Vue({
-    el: '#app',
+    el: "#app"
+    // components:{juancito},
+    // router
 });

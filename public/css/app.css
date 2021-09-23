@@ -10002,3 +10002,391 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.container-custom {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  width: 1140px;
+}
+
+.row-custom {
+  width: 100%;
+  display: flex;
+}
+
+.custom-header {
+  box-shadow: 0px 1px 5px 3px rgba(218, 218, 218, 0.4);
+}
+.custom-header nav {
+  height: 60px;
+  width: 1140px;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.custom-header nav .anuncio-nav button {
+  background: none;
+  background-color: rgba(139, 0, 0, 0.7);
+  height: 100%;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.custom-header nav .anuncio-nav button:hover {
+  background-color: darkred;
+}
+.custom-header nav .menu-nav {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  align-items: flex-end;
+  min-width: 150px;
+}
+.custom-header nav .menu-nav button {
+  background: none;
+  min-height: 100%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.custom-header nav .menu-nav button svg {
+  fill: rgba(139, 0, 0, 0.7) !important;
+  height: 100% !important;
+}
+.custom-header nav .menu-nav .dropdown {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  border: 1px solid #f1f1f1f1;
+  padding: 3px;
+  background: white;
+}
+.custom-header nav .menu-nav .dropdown ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.custom-header nav .menu-nav .dropdown ul li {
+  text-align: left;
+  padding: 6px 3px;
+}
+.custom-header nav .menu-nav .dropdown ul li a {
+  text-decoration: none;
+  color: black;
+}
+.custom-header nav .menu-nav .dropdown ul li a:hover {
+  font-weight: bold;
+}
+
+.carousel-item__card {
+  width: 25%;
+}
+
+.list-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-item {
+  height: 430px;
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border: 1px solid rgba(146, 122, 94, 0.15);
+  overflow: hidden;
+  margin: 7px 0;
+}
+.card-item__header {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+  padding: 5px 8px;
+  background-color: black;
+}
+.card-item__header--name p {
+  margin: 0;
+  color: white;
+}
+.card-item__header--name p span {
+  color: red;
+  font-weight: bold;
+}
+.card-item__header--place {
+  color: white;
+}
+.card-item__header--place p {
+  margin: 0;
+}
+.card-item__header--place p svg {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.card-item__header--place .check {
+  fill: blue !important;
+}
+.card-item__header--place .place {
+  fill: red !important;
+}
+.card-item__background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: calc(100% - 40px);
+  width: 100%;
+}
+.card-item__background .video {
+  left: 10px;
+  top: 5px;
+  position: absolute;
+  background-color: #1fc665;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-item__background .new {
+  height: 100px;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: -10px;
+  text-align: right;
+  top: 0px;
+  right: 0;
+  width: 100px;
+  z-index: 1;
+}
+.card-item__background .new span {
+  background: #cc9933;
+  font-size: 14px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 30px;
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  right: -51px;
+  text-align: center;
+  text-transform: uppercase;
+  top: 19px;
+  transform: rotate(45deg);
+  width: 180px;
+}
+.card-item__background .vip {
+  border: 0 none;
+  z-index: 9;
+  width: 0;
+  height: 0;
+  border-right: 36px solid transparent;
+  border-top: 36px solid transparent;
+  border-left: 36px solid #cc9933;
+  border-bottom: 36px solid #cc9933;
+  bottom: 90px;
+  position: absolute;
+  left: 0;
+}
+.card-item__background .vip span {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  line-height: 36px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  left: -30px;
+  transform: rotate(45deg);
+  top: -5px;
+  font-size: 16px;
+}
+.card-item__background .carousel {
+  height: 100%;
+  width: 100%;
+}
+.card-item__background .carousel .carousel-inner {
+  height: 100%;
+  width: 100%;
+}
+.card-item__background .carousel .carousel-inner .carousel-item {
+  height: 100%;
+  width: 100%;
+}
+.card-item__background .carousel .carousel-inner .carousel-item .row-custom {
+  height: 100%;
+  width: 100%;
+}
+.card-item__background .carousel .carousel-inner .carousel-item .row-custom img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-item__body {
+  background: rgba(255, 255, 255, 0.5);
+}
+.card-item__body .body-profile {
+  display: flex;
+  flex-direction: column;
+}
+.card-item__body .body-profile .profile-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px;
+}
+.card-item__body .body-profile .profile-info__name {
+  display: flex;
+  align-items: center;
+}
+.card-item__body .body-profile .profile-info__name--img {
+  min-width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 8px;
+}
+.card-item__body .body-profile .profile-info__name--img img {
+  background-color: red;
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+.card-item__body .body-profile .profile-info__name p {
+  margin: 0;
+  font-size: 18px;
+}
+.card-item__body .body-profile .profile-info__time span {
+  background-color: black;
+  border-radius: 3px;
+  color: white;
+  padding: 4px 9px;
+  display: block;
+}
+.card-item__body .body-profile .profile-contact {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid black;
+}
+.card-item__body .body-profile .profile-contact p {
+  font-size: 18px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.card-item__body .body-profile .profile-contact p .phone {
+  fill: blue !important;
+}
+.card-item__body .body-profile .profile-contact p .whats {
+  fill: green !important;
+}
+
+.modal-custom {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-custom .modal-c {
+  width: 750px;
+  max-width: 100%;
+}
+
+.indicators-testimonio li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 30px;
+  height: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #800000;
+  margin: 0px;
+  background: #800000;
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+}
+
+.content-testimonio {
+  background-image: url("https://placeresdearequipa.com/imagen/fondo-web.jpg");
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  padding: 10px 0px;
+  width: 100%;
+  margin-top: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.content-testimonio h1 {
+  font-size: 30px;
+}
+.content-testimonio .carousel-inner img {
+  background: none;
+  width: 100%;
+  height: 300px;
+  opacity: 0.7;
+}
+.content-testimonio .carousel-inner .carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+.content-testimonio .carousel-inner .carousel-caption h1 {
+  color: #800000;
+  padding: 10px 2px;
+  font-size: 25px;
+  margin: 0px;
+}
+.content-testimonio .carousel-inner .carousel-caption p {
+  color: #800000;
+  padding: 10px 2px;
+  font-size: 20px;
+  margin: 0px;
+}

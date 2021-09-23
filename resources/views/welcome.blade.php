@@ -2,11 +2,10 @@
 {{-- @extends('adminlte::page') --}}
 
 @section('content')
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         {{-- <div class="row"> --}}
         {{-- <div class="col"> --}}
         {{-- <div class="card-columns"> --}}
-        <!-- Page Content -->
         {{-- <div class="container"> --}}
 
         {{-- <h1 class="fw-light text-center text-lg-start mt-4 mb-0">
@@ -65,13 +64,9 @@
 
         </div>
         <div id="app">
-            <example-component>
-
-
-            </example-component>
-            <juancito></juancito>
+            <example-component></example-component>
         </div>
-    </div>
+    </div> -->
 @endsection
 @section('css')
     <style>
