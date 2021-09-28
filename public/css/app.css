@@ -10008,6 +10008,11 @@ h3 {
   display: flex;
   width: 1140px;
 }
+@media (max-width: 600px) {
+  .container-custom {
+    max-width: 100%;
+  }
+}
 
 .row-custom {
   width: 100%;
@@ -10025,6 +10030,11 @@ h3 {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+}
+@media (max-width: 600px) {
+  .custom-header nav {
+    max-width: 100%;
+  }
 }
 .custom-header nav .anuncio-nav button {
   background: none;
@@ -10098,6 +10108,12 @@ h3 {
   justify-content: space-around;
 }
 
+@media (max-width: 600px) {
+  .card-item {
+    width: 49%;
+    height: 360px;
+  }
+}
 .card-item {
   height: 430px;
   width: 24%;
@@ -10108,6 +10124,12 @@ h3 {
   border: 1px solid rgba(146, 122, 94, 0.15);
   overflow: hidden;
   margin: 7px 0;
+}
+@media (max-width: 600px) {
+  .card-item {
+    width: 49%;
+    height: 360px;
+  }
 }
 .card-item__header {
   display: flex;
@@ -10319,6 +10341,11 @@ h3 {
 .modal-custom .modal-c {
   width: 750px;
   max-width: 100%;
+}
+@media (max-width: 600px) {
+  .modal-custom .modal-c {
+    width: 100%;
+  }
 }
 
 .indicators-testimonio li {

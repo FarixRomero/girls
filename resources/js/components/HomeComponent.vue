@@ -151,7 +151,12 @@
           <i class="fa fa-heart"></i> TESTIMONIOS
           <i class="fa fa-heart"></i>
         </h1>
-        <div id="testimonio" class="carousel slide carousel-testimonio" data-ride="carousel">
+        <div
+          id="testimonio"
+          class="carousel slide carousel-testimonio"
+          data-ride="carousel"
+          data-interval="1500"
+        >
           <ul class="list-unstyled carousel-indicators indicators-testimonio">
             <li data-target="#JPTcarousel2" data-slide-to="0" class></li>
             <li data-target="#JPTcarousel2" data-slide-to="1" class></li>

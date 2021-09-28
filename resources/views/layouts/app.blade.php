@@ -89,11 +89,10 @@
                 </div>
             </div>
         </nav> -->
-        <!-- <example-component></example-component> -->
 
         <header-component></header-component>
         <home-component></home-component>
-        
+        <!-- <profile-component></profile-component> -->
         <main class="py-4" >
             @yield('content')
         </main>
