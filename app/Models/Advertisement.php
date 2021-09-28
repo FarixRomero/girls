@@ -58,5 +58,9 @@ class Advertisement extends Model
     {
       return $this->belongsToMany('App\Models\Service', 'advertisement_services'); // assuming user_id and task_id as fk
     }
+    public function atributos()
+    {
+      return $this->hasMany('App\Models\AtributosUsuario'); // assuming user_id and task_id as fk
+    }
 
 }

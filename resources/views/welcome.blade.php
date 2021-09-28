@@ -43,7 +43,7 @@
                                         </p>
                                     </div>
                                 </a>
-
+                              
                             </div>
                             {{-- <a href="{{ route('user.index', $user->slug) }}">
                                 <img class="img-fluid img-thumbnail" src="{{ asset($file->url) }}" alt="">
@@ -57,10 +57,13 @@
                             {{-- </a> --}}
 
                         </div>
-
+                        <pre>
+                    
+                            {{ $user->advertisement->atributos }}
+                        </pre>
                     @endif
                 @endif
-
+               
             @endforeach
 
         </div>

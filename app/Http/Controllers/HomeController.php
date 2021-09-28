@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\File;
 use App\Models\User;
+use Illuminate\Support\Carbon;
 class HomeController extends Controller
 {
     /**
@@ -28,8 +29,47 @@ class HomeController extends Controller
         // dd($users->toArray());
         return view('welcome',compact('users'));
     }
+  
     public function indexApi(){
-        $users=User::with('files','advertisement')->get();
+
+        setlocale(LC_ALL,"es_ES"); 
+        Carbon::setLocale(config('app.locale'));
+        setlocale(LC_ALL, 'es_MX', 'es', 'ES', 'es_MX.utf8');
+        // \Carbon\Carbon::setLocale('es');;
+        $carbon = new Carbon();
+        $date = $carbon->now();
+        $hora =  $date->hour;
+        $fecha = $date->format('l');
+        // $fechas=[
+        //     'Monday' => 'lunes',
+        //     'Tuesday' => 'martes',
+        //     "Saturday" => "sabado"
+        // ];
+        // $fechaesp=$fechas[$fecha];
+        // dd($fechas[$fecha]);
+        // dd($date->format('l')); 
+        $users=User::inRandomOrder()->with('files','advertisement')->get();
+        $arr=[];
+        foreach($users as $key=>$user){
+            if($user->advertisement){
+                if(!empty($user->advertisement->atributos)){
+                    $dia_actual = null;
+
+                    foreach ($user->advertisement->atributos as $key => $atributos) {
+                        if(strstr($atributos['key'],$fecha)){
+                             $dia_actual = $atributos;
+                        }
+                    }
+                    if($dia_actual){
+                        if( $dia_actual['value_fin']>=$hora && $dia_actual['value']<= $hora ){
+                            $user['is_active']= 1;
+                        }
+                    }else{
+                        $user['is_active']= 0;
+                    }
+                }
+            }
+        }
         return response()->json($users);
     }
 }
