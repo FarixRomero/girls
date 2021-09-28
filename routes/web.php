@@ -21,9 +21,19 @@ use App\Http\Middleware\CheckAdvertisementCreated;
 
 Route::get('/', [HomeController::class, 'index']);
 
+//TEST
+Route::get('/home', [HomeController::class, 'index']);
+
+Route::get('/kinesiologa/{id}', [HomeController::class, 'kinesiologaShow']);
+
+Route::get('/anuncio', [HomeController::class, 'anuncio']);
+
+
+
 Auth::routes();
 
 // Route::resource('/admin/files', FileController::class)->names('admin.files');
+
 Route::resource('/services', ServiceController::class);
 Route::resource('/advertisements', AdvertisementController::class);
 Route::get('/user/index/{slug}', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
@@ -35,10 +45,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth', CheckAdvertisementCreated::class])->group(function () {
-    Route::get('/advertisements/create',  [AdvertisementController::class, 'create'])->name('advertisements.create');
+    // Route::get('/advertisements/create',  [AdvertisementController::class, 'create'])->name('advertisements.create');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/user/panel', [App\Http\Controllers\UserController::class, 'controlPanel'])->name('user.panel');
-});
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/user/panel', [App\Http\Controllers\UserController::class, 'controlPanel'])->name('user.panel');
+// });
+
 // Route::resource('/admin/files','Admin\FileController');

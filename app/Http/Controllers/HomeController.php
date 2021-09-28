@@ -29,7 +29,19 @@ class HomeController extends Controller
         // dd($users->toArray());
         return view('welcome',compact('users'));
     }
-  
+
+    public function kinesiologaShow($id)
+    {
+        $user=User::with(['advertisement', 'files'])->findOrFail($id);
+
+        return view('kinesiologa.index',compact('user'));
+    }
+    public function anuncio(){
+
+        return view('anuncio.index');
+
+    }
+
     public function indexApi(){
 
         setlocale(LC_ALL,"es_ES"); 
@@ -46,8 +58,6 @@ class HomeController extends Controller
         //     "Saturday" => "sabado"
         // ];
         // $fechaesp=$fechas[$fecha];
-        // dd($fechas[$fecha]);
-        // dd($date->format('l')); 
         $users=User::inRandomOrder()->with('files','advertisement')->get();
         $arr=[];
         foreach($users as $key=>$user){

@@ -12,7 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/vue-router.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -29,7 +29,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#BE160B">
+        <!-- <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#BE160B">
             <div class="container">
                 
                 <a class="navbar-brand" style="width: 50%" href="{{ url('/') }}">
@@ -42,14 +42,11 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -91,8 +88,10 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
+        {{-- <home-component></home-component> --}}
+         {{-- <profile-component></profile-component> --}}
         <main class="py-4" >
             @yield('content')
         </main>
