@@ -19,9 +19,8 @@ window.Vue = require("vue").default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// import Router from "vue";
-// import Vue from "vue";
-// Vue.use(Router);
+// import VueRouter from "vue-router";
+// Vue.use(VueRouter);
 
 Vue.component(
     "header-component",
@@ -37,6 +36,9 @@ Vue.component(
 );
 
 Vue.component("profile-component", require("./components/Profile.vue").default);
+Vue.component("anuncio-component", require("./components/Anuncio.vue").default);
+Vue.component("footer-component", require("./components/Footer.vue").default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -44,18 +46,18 @@ Vue.component("profile-component", require("./components/Profile.vue").default);
  */
 
 // import HeaderComponent from "./components/HeaderComponent";
-// import ExampleComponent from "./components/ExampleComponent";
-// import juancito from "./components/juancito";
+// import Profile from "./components/Profile";
+// import HomeComponent from "./components/HomeComponent";
 
-// const router = new Router({
+// const router = new VueRouter({
 //     mode: "history",
 //     routes: [
-//         { path: "/", name: "header", component: HeaderComponent },
-//         { path: "/algo", name: "example", component: ExampleComponent }
+//         { path: "/", component: HeaderComponent },
+//         { path: "/algo", component: Profile }
 //     ]
 // });
 const app = new Vue({
-    el: "#app",
-    // components:{juancito},
+    el: "#app"
+    // components: { HomeComponent },
     // router
 });

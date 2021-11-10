@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <profile-component ></profile-component>
+    <anuncio-component :url_base='@json(url("/"))'></anuncio-component>
 
 @endsection

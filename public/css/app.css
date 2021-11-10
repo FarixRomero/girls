@@ -10028,7 +10028,7 @@ h3 {
   max-width: 1140px;
   margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 10px;
 }
 @media (max-width: 600px) {
@@ -10036,7 +10036,10 @@ h3 {
     max-width: 100%;
   }
 }
-.custom-header nav .anuncio-nav button {
+.custom-header nav .options {
+  display: flex;
+}
+.custom-header nav .options .anuncio-nav button {
   background: none;
   background-color: rgba(139, 0, 0, 0.7);
   height: 100%;
@@ -10047,17 +10050,30 @@ h3 {
   font-weight: bold;
   cursor: pointer;
 }
-.custom-header nav .anuncio-nav button:hover {
+@media (max-width: 600px) {
+  .custom-header nav .options .anuncio-nav button {
+    width: 80px;
+  }
+  .custom-header nav .options .anuncio-nav button span {
+    display: none;
+  }
+}
+.custom-header nav .options .anuncio-nav button:hover {
   background-color: darkred;
 }
-.custom-header nav .menu-nav {
+.custom-header nav .options .menu-nav {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
   align-items: flex-end;
   min-width: 150px;
 }
-.custom-header nav .menu-nav button {
+@media (max-width: 600px) {
+  .custom-header nav .options .menu-nav {
+    min-width: 30px;
+  }
+}
+.custom-header nav .options .menu-nav button {
   background: none;
   min-height: 100%;
   border: none;
@@ -10066,11 +10082,11 @@ h3 {
   font-weight: bold;
   cursor: pointer;
 }
-.custom-header nav .menu-nav button svg {
+.custom-header nav .options .menu-nav button svg {
   fill: rgba(139, 0, 0, 0.7) !important;
   height: 100% !important;
 }
-.custom-header nav .menu-nav .dropdown {
+.custom-header nav .options .menu-nav .dropdown {
   flex-direction: column;
   display: flex;
   width: 100%;
@@ -10078,22 +10094,22 @@ h3 {
   padding: 3px;
   background: white;
 }
-.custom-header nav .menu-nav .dropdown ul {
+.custom-header nav .options .menu-nav .dropdown ul {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
   margin: 0;
 }
-.custom-header nav .menu-nav .dropdown ul li {
+.custom-header nav .options .menu-nav .dropdown ul li {
   text-align: left;
   padding: 6px 3px;
 }
-.custom-header nav .menu-nav .dropdown ul li a {
+.custom-header nav .options .menu-nav .dropdown ul li a {
   text-decoration: none;
   color: black;
 }
-.custom-header nav .menu-nav .dropdown ul li a:hover {
+.custom-header nav .options .menu-nav .dropdown ul li a:hover {
   font-weight: bold;
 }
 
@@ -10124,6 +10140,12 @@ h3 {
   border: 1px solid rgba(146, 122, 94, 0.15);
   overflow: hidden;
   margin: 7px 0;
+  text-decoration: none !important;
+  color: black;
+  position: relative;
+}
+.card-item:hover {
+  color: black;
 }
 @media (max-width: 600px) {
   .card-item {
@@ -10137,28 +10159,30 @@ h3 {
   height: 40px;
   align-items: center;
   padding: 5px 8px;
-  background-color: black;
+  background-color: white;
 }
 .card-item__header--name p {
   margin: 0;
-  color: white;
+  color: #232323;
+  font-weight: bold;
 }
 .card-item__header--name p span {
   color: red;
   font-weight: bold;
 }
 .card-item__header--place {
-  color: white;
+  color: black;
 }
 .card-item__header--place p {
   margin: 0;
+  font-weight: bold;
 }
 .card-item__header--place p svg {
   margin-left: 2px;
   margin-right: 2px;
 }
 .card-item__header--place .check {
-  fill: blue !important;
+  fill: green !important;
 }
 .card-item__header--place .place {
   fill: red !important;
@@ -10197,7 +10221,7 @@ h3 {
   z-index: 1;
 }
 .card-item__background .new span {
-  background: #cc9933;
+  background: #bf4141;
   font-size: 14px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   color: #ffffff;
@@ -10221,8 +10245,8 @@ h3 {
   height: 0;
   border-right: 36px solid transparent;
   border-top: 36px solid transparent;
-  border-left: 36px solid #cc9933;
-  border-bottom: 36px solid #cc9933;
+  border-left: 36px solid #bf4141;
+  border-bottom: 36px solid #bf4141;
   bottom: 90px;
   position: absolute;
   left: 0;
@@ -10263,6 +10287,23 @@ h3 {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.card-item__background .carousel .carousel-inner .carousel-item .img-agua {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  position: absolute;
+  align-items: center;
+  justify-self: center;
+  top: 0;
+  left: 0;
+}
+.card-item__background .carousel .carousel-inner .carousel-item .img-agua img {
+  width: 90px;
+  opacity: 0.5;
+}
 .card-item__body {
   background: rgba(255, 255, 255, 0.5);
 }
@@ -10297,9 +10338,10 @@ h3 {
 .card-item__body .body-profile .profile-info__name p {
   margin: 0;
   font-size: 18px;
+  font-weight: bold;
 }
 .card-item__body .body-profile .profile-info__time span {
-  background-color: black;
+  background-color: #b1b1b1;
   border-radius: 3px;
   color: white;
   padding: 4px 9px;
@@ -10318,9 +10360,10 @@ h3 {
   margin: 0;
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 .card-item__body .body-profile .profile-contact p .phone {
-  fill: blue !important;
+  fill: #ab1111 !important;
 }
 .card-item__body .body-profile .profile-contact p .whats {
   fill: green !important;

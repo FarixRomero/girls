@@ -1,9 +1,43 @@
 <template>
   <div>
     <searchbar-component></searchbar-component>
+    <div class="container-carousel">
+      <carousel
+        class="carousel-ultimas"
+        :responsive="{0:{items:1,nav:false},600:{items:5.1,nav:false}}"
+        :dots="false"
+      >
+        <div
+          v-for="(item, index) in list"
+          :key="index"
+          class="carousel-ultimas__item multi-carousel-item"
+        >
+          <a class="item-link" href>
+            <div class="item-link__img">
+              <img :src="url_img(item.imgs[0])" alt="Gallery image 1" class="w-100" />
+            </div>
+            <div class="item-link__info">
+              <h2>
+                Camila
+                <span>Surco</span>
+              </h2>
+              <p class="disponibility">Disponible AHORA</p>
+              <p class="hour">
+                <i class="fas fa-history"></i> hace 2 horas
+              </p>
+            </div>
+          </a>
+        </div>
+      </carousel>
+    </div>
     <div class="container-custom">
       <div class="list-cards">
-        <div v-for="(item,index) in [1,1,1,1,1,1,,1,1,1,1,1,,1]" :key="index" class="card-item">
+        <a
+          :href="url_base+'/kinesiologa/'+(index+1)"
+          v-for="(item,index) in list"
+          :key="index"
+          class="card-item"
+        >
           <div class="card-item__header">
             <div class="card-item__header--name">
               <p>
@@ -70,25 +104,17 @@
               data-ride="carousel"
             >
               <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
+                <div
+                  v-for="(item, index) in item.imgs"
+                  :key="index"
+                  class="carousel-item"
+                  :class="index==0?'active':''"
+                >
                   <div class="row-custom">
-                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt />
+                    <img :src="url_img(item)" alt />
                   </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row-custom">
-                    <img
-                      src="https://www.latercera.com/resizer/zti1PHor4Ne6qzEM39JC3s9sNUk=/800x0/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/FH64ZCSIZFHTDLJ4Y6PBCWP3JM.png"
-                      alt
-                    />
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row-custom">
-                    <img
-                      src="https://www.enter.co/wp-content/uploads/2019/06/image-1024x945.jpg"
-                      alt
-                    />
+                  <div class="img-agua">
+                    <img :src="url_img('/images/pa.png')" alt />
                   </div>
                 </div>
               </div>
@@ -142,7 +168,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="container-custom">
@@ -158,11 +184,11 @@
           data-interval="1500"
         >
           <ul class="list-unstyled carousel-indicators indicators-testimonio">
-            <li data-target="#JPTcarousel2" data-slide-to="0" class></li>
-            <li data-target="#JPTcarousel2" data-slide-to="1" class></li>
-            <li data-target="#JPTcarousel2" data-slide-to="2" class="active"></li>
-            <li data-target="#JPTcarousel2" data-slide-to="3" class></li>
-            <li data-target="#JPTcarousel2" data-slide-to="4" class></li>
+            <li data-target="#testimonio" data-slide-to="0" class></li>
+            <li data-target="#testimonio" data-slide-to="1" class></li>
+            <li data-target="#testimonio" data-slide-to="2" class="active"></li>
+            <li data-target="#testimonio" data-slide-to="3" class></li>
+            <li data-target="#testimonio" data-slide-to="4" class></li>
           </ul>
           <div class="carousel-inner">
             <div class="carousel-item">
@@ -236,144 +262,10 @@
               </div>
             </div>
           </div>
-          <!-- <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/02/23/16140825338574.jpg"
-                class="d-block w-100"
-              />
-            </div>
-            <div class="carousel-item">
-              <img src="https://placeresdearequipa.com/imagen/fondo-web.jpg" class="d-block w-100" />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://cl.buscafs.com/www.levelup.com/public/uploads/images/697786/697786.jpg"
-                class="d-block w-100"
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://images.eurogamer.net/2020/articles/2020-01-13-11-45/pokemon-go-regional-header.jpg/EG11/resize/1200x-1/pokemon-go-regional-header.jpg"
-                class="d-block w-100"
-              />
-            </div>
-          </div>-->
-          <!-- <a class="carousel-control-prev" href="#testimonio" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#testimonio" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>-->
         </div>
       </div>
     </div>
-    <!-- <div class="container-custom">
-      <div id="Testimonio">
-        <div class="container-fluid">
-          <h1 class="text-center">
-            <i class="fa fa-heart"></i> TESTIMONIOS
-            <i class="fa fa-heart"></i>
-          </h1>
-          <div id="JPTcarousel2" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="imagen/fondo.png" />
-                <div class="carousel-caption hidden-xs fadeInDown animated">
-                  <h1>
-                    <i>
-                      <span>La mejor pagina de escorts del PERU</span>
-                    </i>
-                  </h1>
-                  <hr class="my-0" />
-                  <p>Aqui encontraras anuncios de kinesiólogas A1. Sexo delivery.Kinesiólogas en Arequipa, Escorts independientes del PERU, sexo con kinesiólogas del PERU. Culonas, tetonas, jovenictas, maduritas. Encuentra la mejor forma de contactar con kinesiólogas y Damas de compañia</p>
 
-                  <p>- Lucio gallegos-</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="imagen/fondo.png" />
-                <div class="carousel-caption hidden-xs fadeInDown animated">
-                  <h1>
-                    <i>
-                      <span>Contacto con Kinesiólogas - Escorts</span>
-                    </i>
-                  </h1>
-                  <hr class="my-0" />
-                  <p>A la hora de conocer mujeres puedes recurrir a bares,discotekas,webs. placeresdearequipa es un portal de anuncios eroticos que tan solo hacer un click, puedes acceder a un enorme listado de Kinesiólogas,Escorts o mujeres liberales,dispuestas a tener relaciones esporadicas. Si buscas sexo ahora con chicas no profesionales, en pagina placeresdearequipa encontaras un enorme variedad de mujeres jovencitas, con las que podras quedar hoy mismo si asi lo deseas.</p>
-
-                  <p>-Matias Fernandez-</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="imagen/fondo.png" />
-                <div class="carousel-caption hidden-xs fadeInDown animated">
-                  <h1>
-                    <i>
-                      <span>Escorts Kinesiólogas del PERU</span>
-                    </i>
-                  </h1>
-                  <hr class="my-0" />
-                  <p>Selecciona entre los anuncios que publican diariamente Kinesiólogas, Escorts. Fotos reales 100% de kinesiólogas, escorts. Disfruta el placer y la pasion de Kinesiologas economicas que se anuncian en esta pagina. Fotos de kinesiologas, escorts. Enviales un whatsapp a estas kinesiólogas Arequipa para pedirle una cita.</p>
-
-                  <p>-Damian-</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="imagen/fondo.png" />
-                <div class="carousel-caption hidden-xs fadeInDown animated">
-                  <h1>
-                    <i>
-                      <span>Hermosas Kinesiólogas,Escorts</span>
-                    </i>
-                  </h1>
-                  <hr class="my-0" />
-                  <p>Muy buenas y hermosas Escorts,Kinesiólogas cada una de estas Kinesiólogas son lindas mujeres peruanas. Es la mejor seleccion de Damas de compañia que existe en el PERU.</p>
-
-                  <p>-Julio Butamante-</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="imagen/fondo.png" />
-                <div class="carousel-caption hidden-xs fadeInDown animated">
-                  <h1>
-                    <i>
-                      <span>placeresdearequipa</span>
-                    </i>
-                  </h1>
-                  <hr class="my-0" />
-                  <p>Sin lugar a duda es la mejor pagina de Escorts, Kinesiólogas. Paro de viaje por motivos de negocio y todas noches durante 4 dias estube llamando a algunas kines vip, y tube la mejor experiencia por medio de la pagina placeresdearequipa.com</p>
-
-                  <p>-Daniel-</p>
-                </div>
-              </div>
-            </div>
-            <a
-              style="display:none;"
-              class="carousel-control-prev"
-              href="#JPTcarousel2"
-              role="button"
-              data-slide="prev"
-            >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a
-              style="display:none;"
-              class="carousel-control-next"
-              href="#JPTcarousel2"
-              role="button"
-              data-slide="next"
-            >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>-->
     <div v-if="accept" class="modal-custom">
       <div class="modal-c modal-content">
         <div class="modal-h modal-header">
@@ -398,15 +290,15 @@
                   <strong>La inserción de material pedófilo, incluidos todos los datos de acceso, se comunicará inmediatamente a las autoridades competentes a fin de llegar a los responsables implicados.</strong>
                 </li>
                 <li>
-                  Al publicar un anuncio en Skokka,
-                  <strong>el Usuario certifica que puede acceder al contenido con todos los derechos</strong> y también declara que cualquier persona representada en las imágenes cargadas es mayor de edad (más de 18 años), y que ha dado su consentimiento para publicarlas en Skokka.
+                  Al publicar un anuncio en Placeres Arequipa,
+                  <strong>el Usuario certifica que puede acceder al contenido con todos los derechos</strong> y también declara que cualquier persona representada en las imágenes cargadas es mayor de edad (más de 18 años), y que ha dado su consentimiento para publicarlas en Placeres Arequipa.
                 </li>
               </ul>
             </div>
             <div class="p-2 bd-highlight order-lg-1">
               Al hacer clic en el botón "Aceptar", el Usuario declara ser
               <strong>mayor de 18 años</strong> y
-              <strong>exime de toda responsabilidad a los proveedores de estos servicios, propietarios y creadores de skokka.com sobre los contenidos y sobre el uso que se haga de la sección.</strong> Asimismo, al hacer clic en el botón "Aceptar", el Usuario declara conocer y aceptar expresamente la
+              <strong>exime de toda responsabilidad a los proveedores de estos servicios, propietarios y creadores de Placeres Arequipa.com sobre los contenidos y sobre el uso que se haga de la sección.</strong> Asimismo, al hacer clic en el botón "Aceptar", el Usuario declara conocer y aceptar expresamente la
               <a
                 target="_blank"
                 data-href="/politica-de-privacidad/"
@@ -425,19 +317,213 @@
         </div>
       </div>
     </div>
+    <footer-component></footer-component>
   </div>
 </template>
 <script>
+import carousel from "vue-owl-carousel";
+
 export default {
+  props: ["url_base"],
   data() {
     return {
       accept: false,
+      list: [
+        {
+          id: 1,
+          imgs: [
+            "/images/chicas/1.jpeg",
+            // "/images/chicas/2.jpeg",
+            // "/images/chicas/3.jpeg",
+            // "/images/chicas/4.jpeg",
+          ],
+        },
+        {
+          id: 2,
+          imgs: [
+            "/images/chicas/5.jpeg",
+            "/images/chicas/6.jpeg",
+            "/images/chicas/7.jpeg",
+            "/images/chicas/8.jpeg",
+          ],
+        },
+        {
+          id: 1,
+          imgs: [
+            "/images/chicas/1.jpeg",
+            "/images/chicas/2.jpeg",
+            "/images/chicas/3.jpeg",
+            "/images/chicas/4.jpeg",
+          ],
+        },
+        {
+          id: 2,
+          imgs: [
+            "/images/chicas/5.jpeg",
+            "/images/chicas/6.jpeg",
+            "/images/chicas/7.jpeg",
+            "/images/chicas/8.jpeg",
+          ],
+        },
+        {
+          id: 1,
+          imgs: [
+            "/images/chicas/1.jpeg",
+            "/images/chicas/2.jpeg",
+            "/images/chicas/3.jpeg",
+            "/images/chicas/4.jpeg",
+          ],
+        },
+        {
+          id: 2,
+          imgs: [
+            "/images/chicas/5.jpeg",
+            "/images/chicas/6.jpeg",
+            "/images/chicas/7.jpeg",
+            "/images/chicas/8.jpeg",
+          ],
+        },
+        {
+          id: 1,
+          imgs: [
+            "/images/chicas/1.jpeg",
+            "/images/chicas/2.jpeg",
+            "/images/chicas/3.jpeg",
+            "/images/chicas/4.jpeg",
+          ],
+        },
+        {
+          id: 2,
+          imgs: [
+            "/images/chicas/5.jpeg",
+            "/images/chicas/6.jpeg",
+            "/images/chicas/7.jpeg",
+            "/images/chicas/8.jpeg",
+          ],
+        },
+        {
+          id: 1,
+          imgs: [
+            "/images/chicas/1.jpeg",
+            "/images/chicas/2.jpeg",
+            "/images/chicas/3.jpeg",
+            "/images/chicas/4.jpeg",
+          ],
+        },
+        {
+          id: 2,
+          imgs: [
+            "/images/chicas/5.jpeg",
+            "/images/chicas/6.jpeg",
+            "/images/chicas/7.jpeg",
+            "/images/chicas/8.jpeg",
+          ],
+        },
+        {
+          id: 1,
+          imgs: [
+            "/images/chicas/1.jpeg",
+            "/images/chicas/2.jpeg",
+            "/images/chicas/3.jpeg",
+            "/images/chicas/4.jpeg",
+          ],
+        },
+        {
+          id: 2,
+          imgs: [
+            "/images/chicas/5.jpeg",
+            "/images/chicas/6.jpeg",
+            "/images/chicas/7.jpeg",
+            "/images/chicas/8.jpeg",
+          ],
+        },
+      ],
     };
   },
   mounted() {
     setTimeout(() => {
-      this.accept = true;
+      // this.accept = true;
     }, 3000);
   },
+  components: {
+    carousel,
+  },
+  methods: {
+    url_img(a) {
+      return this.url_base + a;
+    },
+  },
+  computed: {},
 };
 </script>
+<style lang="scss" scoped>
+.container-carousel {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 25px 5px;
+  max-width: 100%;
+  .carousel-ultimas {
+    border: 1px solid black;
+
+    .owl-carousel {
+      .owl-stage-outer {
+        .owl-stage {
+          .owl-item {
+            .carousel-ultimas__item {
+              .item-link {
+                display: flex;
+                align-items: center;
+                height: 80px;
+                justify-content: space-between;
+                border-right: 1px solid black;
+                text-decoration: none;
+                &__img {
+                  border: 2px solid red;
+                  min-width: 60px;
+                  max-width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                  // overflow: hidden;
+                  margin: 0 10px;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                  }
+                }
+                &__info {
+                  width: 60%;
+                  h2 {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: black;
+                    margin: 0;
+                    span {
+                      color: #cc3366;
+                      font-weight: normal;
+                    }
+                  }
+                  p {
+                    margin: 0;
+                  }
+                  .disponibility {
+                    color: black;
+                    font-size: 12px;
+                  }
+                  .hour {
+                    color: black;
+                    font-size: 12px;
+                    align-self: flex-end;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>

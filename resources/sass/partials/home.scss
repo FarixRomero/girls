@@ -21,74 +21,87 @@
         max-width: 1140px;
         margin: 0 auto;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         padding: 10px;
         @media (max-width: 600px) {
             max-width: 100%;
         }
-        .anuncio-nav {
-            button {
-                background: none;
-                background-color: rgba(139, 0, 0, 0.7);
-                height: 100%;
-                width: 150px;
-                border: none;
-                border-radius: 5px;
-                color: white;
-                font-weight: bold;
-                cursor: pointer;
-                &:hover {
-                    background-color: rgba(139, 0, 0, 1);
-                }
-            }
-        }
-        .menu-nav {
+        .options {
             display: flex;
-            flex-direction: column;
-            margin-left: 30px;
-            align-items: flex-end;
-            min-width: 150px;
-            button {
-                background: none;
-                // background-color: rgba(139, 0, 0, 0.7);
-                min-height: 100%;
-                // width: 150px;
-                border: none;
-                border-radius: 5px;
-                color: white;
-                font-weight: bold;
-                cursor: pointer;
-                svg {
-                    fill: rgba(139, 0, 0, 0.7) !important;
-                    height: 100% !important;
-                    // width: 40px !important;
-                }
-                &:hover {
-                    // background-color: rgba(139, 0, 0, 1);
+            .anuncio-nav {
+                button {
+                    background: none;
+                    background-color: rgba(139, 0, 0, 0.7);
+                    height: 100%;
+                    width: 150px;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    @media (max-width: 600px) {
+                        width: 80px;
+                        span {
+                            display: none;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: rgba(139, 0, 0, 1);
+                    }
                 }
             }
-            .dropdown {
-                flex-direction: column;
+            .menu-nav {
                 display: flex;
-                width: 100%;
-                border: 1px solid #f1f1f1f1;
-                padding: 3px;
-                background: white;
-                ul {
-                    list-style: none;
-                    padding: 0;
-                    display: flex;
+                flex-direction: column;
+                margin-left: 30px;
+                align-items: flex-end;
+                min-width: 150px;
+                @media (max-width: 600px) {
+                    min-width: 30px;
+                }
+                button {
+                    background: none;
+                    // background-color: rgba(139, 0, 0, 0.7);
+                    min-height: 100%;
+                    // width: 150px;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    svg {
+                        fill: rgba(139, 0, 0, 0.7) !important;
+                        height: 100% !important;
+                        // width: 40px !important;
+                    }
+                    &:hover {
+                        // background-color: rgba(139, 0, 0, 1);
+                    }
+                }
+                .dropdown {
                     flex-direction: column;
-                    margin: 0;
-                    li {
-                        text-align: left;
+                    display: flex;
+                    width: 100%;
+                    border: 1px solid #f1f1f1f1;
+                    padding: 3px;
+                    background: white;
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0;
+                        li {
+                            text-align: left;
 
-                        padding: 6px 3px;
-                        a {
-                            text-decoration: none;
-                            color: black;
-                            &:hover {
-                                font-weight: bold;
+                            padding: 6px 3px;
+                            a {
+                                text-decoration: none;
+                                color: black;
+                                &:hover {
+                                    font-weight: bold;
+                                }
                             }
                         }
                     }
@@ -122,6 +135,13 @@
     border: 1px solid rgba(146, 122, 94, 0.15);
     overflow: hidden;
     margin: 7px 0;
+    text-decoration: none !important;
+    color: black;
+    position: relative;
+
+    &:hover {
+        color: black;
+    }
     @media (max-width: 600px) {
         width: 49%;
         height: 360px;
@@ -132,11 +152,12 @@
         height: 40px;
         align-items: center;
         padding: 5px 8px;
-        background-color: black;
+        background-color: white;
         &--name {
             p {
                 margin: 0;
-                color: white;
+                color: rgb(35, 35, 35);
+                font-weight: bold;
                 span {
                     color: red;
                     font-weight: bold;
@@ -144,16 +165,17 @@
             }
         }
         &--place {
-            color: white;
+            color: black;
             p {
                 margin: 0;
+                font-weight: bold;
                 svg {
                     margin-left: 2px;
                     margin-right: 2px;
                 }
             }
             .check {
-                fill: blue !important;
+                fill: green !important;
             }
             .place {
                 fill: red !important;
@@ -192,7 +214,7 @@
             width: 100px;
             z-index: 1;
             span {
-                background: #cc9933;
+                background: #bf4141;
                 font-size: 14px;
                 box-shadow: 0 0 3px rgb(0 0 0 / 30%);
                 color: #ffffff;
@@ -218,8 +240,9 @@
             height: 0;
             border-right: 36px solid transparent;
             border-top: 36px solid transparent;
-            border-left: 36px solid #cc9933;
-            border-bottom: 36px solid #cc9933;
+            //  cc9933
+            border-left: 36px solid #bf4141;
+            border-bottom: 36px solid #bf4141;
             bottom: 90px;
             position: absolute;
             left: 0;
@@ -256,6 +279,23 @@
                             object-fit: cover;
                         }
                     }
+                    .img-agua {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 50px;
+                        position: absolute;
+                        align-items: center;
+                        justify-self: center;
+                        top: 0;
+                        left: 0;
+                        img {
+                            width: 90px;
+                            opacity: 0.5;
+                        }
+                    }
                 }
             }
         }
@@ -290,11 +330,12 @@
                     p {
                         margin: 0;
                         font-size: 18px;
+                        font-weight: bold;
                     }
                 }
                 &__time {
                     span {
-                        background-color: black;
+                        background-color: rgb(177, 177, 177);
                         border-radius: 3px;
                         color: white;
                         padding: 4px 9px;
@@ -314,8 +355,9 @@
                     margin: 0;
                     display: flex;
                     align-items: center;
+                    font-weight: bold;
                     .phone {
-                        fill: blue !important;
+                        fill: rgb(171, 17, 17) !important;
                     }
                     .whats {
                         fill: green !important;

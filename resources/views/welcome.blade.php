@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-   {{-- <header-component></header-component> --}}
-   {{-- <home-component></home-component> --}}
+    <header-component :url_base='@json(url("/"))'></header-component> 
+    <home-component :url_base='@json(url("/"))'></home-component> 
    {{-- :url_post='@json(url('/')' --}}
-         <profile-component  ' ></profile-component>
+         <!-- <profile-component ></profile-component> -->
 
 @endsection
 @section('css')

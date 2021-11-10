@@ -4,15 +4,15 @@
       <div class="searchbar-content__ipt">
         <input type="text" placeholder="¿Qué buscas?" />
       </div>
-      <div class="searchbar-content__ipt">
+      <!-- <div class="searchbar-content__ipt">
         <input type="text" placeholder="¿Donde?" />
-      </div>
+      </div>-->
       <div class="searchbar-content__opt">
-        <div class="searchbar-content__opt--select">
+        <!-- <div class="searchbar-content__opt--select">
           <select name id>
             <option value>+ 0 km</option>
           </select>
-        </div>
+        </div>-->
         <div class="searchbar-content__opt--btn">
           <button>
             <svg
@@ -44,9 +44,16 @@ export default {};
     justify-content: center;
     padding: 25px 0;
     margin: 0 auto;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
     &__ipt {
       width: 35%;
       padding: 0 10px;
+      @media (max-width: 600px) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
       input {
         width: 100%;
         padding: 7px 10px;
@@ -58,6 +65,9 @@ export default {};
     &__opt {
       width: 30%;
       display: flex;
+      @media (max-width: 600px) {
+        width: 100%;
+      }
       &--select {
         width: 50%;
         padding: 0 10px;
