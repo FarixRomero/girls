@@ -1,6 +1,14 @@
 <template>
   <div>
     <searchbar-component></searchbar-component>
+    <div class="contact">
+      <p>
+        ¿ Quieres contactar
+        <a
+          href="https://wa.me/51944068975?text=Hola%quiero%anunciar%20en%Placeres%Arequipa"
+        >944068975</a> ?
+      </p>
+    </div>
     <div class="container-carousel">
       <carousel
         class="carousel-ultimas"
@@ -12,6 +20,15 @@
           :key="index"
           class="carousel-ultimas__item multi-carousel-item"
         >
+          <div
+            class="shake-texti"
+            style="position: absolute; top: 0px; background: black; border-radius: 3px; padding: 0 2px"
+          >
+            <div
+              style="display: inline-block; background-color: green; width: 8px; height: 8px; border-radius: 50%"
+            ></div>
+            <span class="live" style="fonst-size:10px; color: white; display: inline-block">LIVE</span>
+          </div>
           <a class="item-link" href>
             <div class="item-link__img">
               <img :src="url_img(item.imgs[0])" alt="Gallery image 1" class="w-100" />
@@ -79,15 +96,11 @@
           </div>
           <div class="card-item__background">
             <span class="video">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
-                  d="M18 7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-3.333L22 17V7l-4 3.333V7z"
+                  fill="#ffffff"
+                  width="20"
+                  d="M21.53,7.15a1,1,0,0,0-1,0L17,8.89A3,3,0,0,0,14,6H5A3,3,0,0,0,2,9v6a3,3,0,0,0,3,3h9a3,3,0,0,0,3-2.89l3.56,1.78A1,1,0,0,0,21,17a1,1,0,0,0,.53-.15A1,1,0,0,0,22,16V8A1,1,0,0,0,21.53,7.15ZM15,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V9A1,1,0,0,1,5,8h9a1,1,0,0,1,1,1Zm5-.62-3-1.5V11.12l3-1.5Z"
                 />
               </svg>
             </span>
@@ -172,93 +185,140 @@
       </div>
     </div>
     <div class="container-custom">
-      <div class="d-flex flex-column content-testimonio w-100">
-        <h1 class="text-center">
-          <i class="fa fa-heart"></i> TESTIMONIOS
-          <i class="fa fa-heart"></i>
-        </h1>
+      <div class="custom-testimonios d-flex flex-column content-testimonio w-100">
+        <h1 class="text-center">TESTIMONIOS</h1>
         <div
           id="testimonio"
           class="carousel slide carousel-testimonio"
           data-ride="carousel"
-          data-interval="1500"
+          data-interval="3500"
         >
           <ul class="list-unstyled carousel-indicators indicators-testimonio">
-            <li data-target="#testimonio" data-slide-to="0" class></li>
+            <li data-target="#testimonio" data-slide-to="0" class="active"></li>
             <li data-target="#testimonio" data-slide-to="1" class></li>
-            <li data-target="#testimonio" data-slide-to="2" class="active"></li>
+            <li data-target="#testimonio" data-slide-to="2" class></li>
             <li data-target="#testimonio" data-slide-to="3" class></li>
             <li data-target="#testimonio" data-slide-to="4" class></li>
           </ul>
           <div class="carousel-inner">
-            <div class="carousel-item">
-              <img src="https://placeresdearequipa.com/imagen/fondo.png" />
+            <div class="carousel-item item-testimonio active">
               <div class="carousel-caption hidden-xs fadeInDown animated">
-                <h1>
-                  <i>
-                    <span>La mejor pagina de escorts del PERU</span>
-                  </i>
-                </h1>
-                <hr class="my-0" />
-                <p>Aqui encontraras anuncios de kinesiólogas A1. Sexo delivery.Kinesiólogas en Arequipa, Escorts independientes del PERU, sexo con kinesiólogas del PERU. Culonas, tetonas, jovenictas, maduritas. Encuentra la mejor forma de contactar con kinesiólogas y Damas de compañia</p>
+                <div class="left">
+                  <div class="text">
+                    <p>Sin lugar a duda es la mejor pagina de Escorts, Kinesiólogas. Paro de viaje por motivos de negocio y todas noches durante 4 dias estube llamando a algunas kines vip, y tube la mejor experiencia por medio de la pagina placeresdearequipa.com</p>
+                  </div>
 
-                <p>- Lucio gallegos-</p>
+                  <div class="img">
+                    <img :src="url_img('/images/user.png')" alt />
+                    <h3>- Daniel Romero</h3>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>Puntaje 5 / 5</p>
+                </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://placeresdearequipa.com/imagen/fondo.png" />
+            <div class="carousel-item item-testimonio">
               <div class="carousel-caption hidden-xs fadeInDown animated">
-                <h1>
-                  <i>
-                    <span>Contacto con Kinesiólogas - Escorts</span>
-                  </i>
-                </h1>
-                <hr class="my-0" />
-                <p>A la hora de conocer mujeres puedes recurrir a bares,discotekas,webs. placeresdearequipa es un portal de anuncios eroticos que tan solo hacer un click, puedes acceder a un enorme listado de Kinesiólogas,Escorts o mujeres liberales,dispuestas a tener relaciones esporadicas. Si buscas sexo ahora con chicas no profesionales, en pagina placeresdearequipa encontaras un enorme variedad de mujeres jovencitas, con las que podras quedar hoy mismo si asi lo deseas.</p>
+                <div class="left">
+                  <div class="text">
+                    <p>Aqui encontraras anuncios de kinesiólogas A1. Sexo delivery.Kinesiólogas en Arequipa, Escorts independientes del PERU, sexo con kinesiólogas del PERU. Culonas, tetonas, jovenictas, maduritas. Encuentra la mejor forma de contactar con kinesiólogas y Damas de compañia</p>
+                  </div>
 
-                <p>-Matias Fernandez-</p>
+                  <div class="img">
+                    <img :src="url_img('/images/user.png')" alt />
+                    <h3>- Lucio gallegos</h3>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>Puntaje 5 / 5</p>
+                </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://placeresdearequipa.com/imagen/fondo.png" />
+            <div class="carousel-item item-testimonio">
               <div class="carousel-caption hidden-xs fadeInDown animated">
-                <h1>
-                  <i>
-                    <span>Escorts Kinesiólogas del PERU</span>
-                  </i>
-                </h1>
-                <hr class="my-0" />
-                <p>Selecciona entre los anuncios que publican diariamente Kinesiólogas, Escorts. Fotos reales 100% de kinesiólogas, escorts. Disfruta el placer y la pasion de Kinesiologas economicas que se anuncian en esta pagina. Fotos de kinesiologas, escorts. Enviales un whatsapp a estas kinesiólogas Arequipa para pedirle una cita.</p>
+                <div class="left">
+                  <div class="text">
+                    <p>Selecciona entre los anuncios que publican diariamente Kinesiólogas, Escorts. Fotos reales 100% de kinesiólogas, escorts. Disfruta el placer y la pasion de Kinesiologas economicas que se anuncian en esta pagina. Fotos de kinesiologas, escorts. Enviales un whatsapp a estas kinesiólogas Arequipa para pedirle una cita.</p>
+                  </div>
 
-                <p>-Damian-</p>
+                  <div class="img">
+                    <img :src="url_img('/images/user.png')" alt />
+                    <h3>- Damian Gomez</h3>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>Puntaje 5 / 5</p>
+                </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://placeresdearequipa.com/imagen/fondo.png" />
+            <div class="carousel-item item-testimonio">
               <div class="carousel-caption hidden-xs fadeInDown animated">
-                <h1>
-                  <i>
-                    <span>Hermosas Kinesiólogas,Escorts</span>
-                  </i>
-                </h1>
-                <hr class="my-0" />
-                <p>Muy buenas y hermosas Escorts,Kinesiólogas cada una de estas Kinesiólogas son lindas mujeres peruanas. Es la mejor seleccion de Damas de compañia que existe en el PERU.</p>
+                <div class="left">
+                  <div class="text">
+                    <p>A la hora de conocer mujeres puedes recurrir a bares,discotekas,webs. placeresdearequipa es un portal de anuncios eroticos que tan solo hacer un click, puedes acceder a un enorme listado de Kinesiólogas,Escorts o mujeres liberales,dispuestas a tener relaciones esporadicas. Si buscas sexo ahora con chicas no profesionales, en pagina placeresdearequipa encontaras un enorme variedad de mujeres jovencitas, con las que podras quedar hoy mismo si asi lo deseas.</p>
+                  </div>
 
-                <p>-Julio Butamante-</p>
+                  <div class="img">
+                    <img :src="url_img('/images/user.png')" alt />
+                    <h3>- Matias Fernandez</h3>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>Puntaje 5 / 5</p>
+                </div>
               </div>
             </div>
-            <div class="carousel-item active">
-              <img src="https://placeresdearequipa.com/imagen/fondo.png" />
+            <div class="carousel-item item-testimonio">
               <div class="carousel-caption hidden-xs fadeInDown animated">
-                <h1>
-                  <i>
-                    <span>placeresdearequipa</span>
-                  </i>
-                </h1>
-                <hr class="my-0" />
-                <p>Sin lugar a duda es la mejor pagina de Escorts, Kinesiólogas. Paro de viaje por motivos de negocio y todas noches durante 4 dias estube llamando a algunas kines vip, y tube la mejor experiencia por medio de la pagina placeresdearequipa.com</p>
+                <div class="left">
+                  <div class="text">
+                    <p>Muy buenas y hermosas Escorts,Kinesiólogas cada una de estas Kinesiólogas son lindas mujeres peruanas. Es la mejor seleccion de Damas de compañia que existe en el PERU.</p>
+                  </div>
 
-                <p>-Daniel-</p>
+                  <div class="img">
+                    <img :src="url_img('/images/user.png')" alt />
+                    <h3>- Julio Butamante</h3>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>Puntaje 5 / 5</p>
+                </div>
               </div>
             </div>
           </div>
@@ -470,6 +530,7 @@ export default {
         .owl-stage {
           .owl-item {
             .carousel-ultimas__item {
+              position: relative;
               .item-link {
                 display: flex;
                 align-items: center;
@@ -523,6 +584,121 @@ export default {
           }
         }
       }
+    }
+  }
+}
+.custom-testimonios {
+  h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+.item-testimonio {
+  min-height: 275px;
+  @media (max-width: 600px) {
+    min-height: 450px;
+  }
+  .carousel-caption {
+    display: flex;
+    height: 100%;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .text {
+        text-align: left;
+        @media (max-width: 600px) {
+          text-align: center;
+        }
+        p {
+          font-size: 18px;
+          color: black;
+        }
+      }
+      .img {
+        display: flex;
+
+        align-items: center;
+        img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          margin-bottom: 5px;
+        }
+        h3 {
+          margin-left: 15px;
+          font-size: 16px;
+          color: black;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      min-width: 155px;
+      .stars {
+        i {
+          color: orange;
+        }
+      }
+      p {
+        color: black;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.shake-texti {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  transform: translate3d(0, 0, 0);
+  @media (max-width: 600px) {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.contact {
+  width: 100%;
+  text-align: center;
+  background-color: #bf4141;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  p {
+    margin-bottom: 0;
+    color: white;
+    font-size: 16px;
+    a {
+      color: white;
+      font-size: 18px;
+      text-decoration: underline;
     }
   }
 }

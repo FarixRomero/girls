@@ -2676,6 +2676,66 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["url_base"],
@@ -3065,12 +3125,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["usuario", "url_base"],
   data: function data() {
     return {
       url: " ",
+      showModal: false,
       imgs: ["/images/chicas/1.jpeg", "/images/chicas/2.jpeg", "/images/chicas/3.jpeg", "/images/chicas/4.jpeg", "/images/chicas/1.jpeg", "/images/chicas/2.jpeg", "/images/chicas/3.jpeg", "/images/chicas/4.jpeg"],
       lives: ["/images/chicas/1.jpeg", "/images/chicas/2.jpeg", "/images/chicas/3.jpeg", "/images/chicas/4.jpeg"]
     };
@@ -3081,6 +3172,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     url_img: function url_img(a) {
       return this.url_base + a;
+    },
+    openModal: function openModal() {
+      this.showModal = true;
+    },
+    closeModal: function closeModal() {
+      this.showModal = false;
     }
   },
   computed: {
@@ -7781,7 +7878,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-carousel[data-v-782dcf83] {\n  width: 1140px;\n  margin: 0 auto;\n  padding: 25px 5px;\n  max-width: 100%;\n}\n.container-carousel .carousel-ultimas[data-v-782dcf83] {\n  border: 1px solid black;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link[data-v-782dcf83] {\n  display: flex;\n  align-items: center;\n  height: 80px;\n  justify-content: space-between;\n  border-right: 1px solid black;\n  text-decoration: none;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__img[data-v-782dcf83] {\n  border: 2px solid red;\n  min-width: 60px;\n  max-width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  margin: 0 10px;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__img img[data-v-782dcf83] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  border-radius: 50%;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info[data-v-782dcf83] {\n  width: 60%;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info h2[data-v-782dcf83] {\n  font-size: 16px;\n  font-weight: bold;\n  color: black;\n  margin: 0;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info h2 span[data-v-782dcf83] {\n  color: #cc3366;\n  font-weight: normal;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info p[data-v-782dcf83] {\n  margin: 0;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info .disponibility[data-v-782dcf83] {\n  color: black;\n  font-size: 12px;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info .hour[data-v-782dcf83] {\n  color: black;\n  font-size: 12px;\n  align-self: flex-end;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-carousel[data-v-782dcf83] {\n  width: 1140px;\n  margin: 0 auto;\n  padding: 25px 5px;\n  max-width: 100%;\n}\n.container-carousel .carousel-ultimas[data-v-782dcf83] {\n  border: 1px solid black;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item[data-v-782dcf83] {\n  position: relative;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link[data-v-782dcf83] {\n  display: flex;\n  align-items: center;\n  height: 80px;\n  justify-content: space-between;\n  border-right: 1px solid black;\n  text-decoration: none;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__img[data-v-782dcf83] {\n  border: 2px solid red;\n  min-width: 60px;\n  max-width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  margin: 0 10px;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__img img[data-v-782dcf83] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  border-radius: 50%;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info[data-v-782dcf83] {\n  width: 60%;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info h2[data-v-782dcf83] {\n  font-size: 16px;\n  font-weight: bold;\n  color: black;\n  margin: 0;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info h2 span[data-v-782dcf83] {\n  color: #cc3366;\n  font-weight: normal;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info p[data-v-782dcf83] {\n  margin: 0;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info .disponibility[data-v-782dcf83] {\n  color: black;\n  font-size: 12px;\n}\n.container-carousel .carousel-ultimas .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-ultimas__item .item-link__info .hour[data-v-782dcf83] {\n  color: black;\n  font-size: 12px;\n  align-self: flex-end;\n}\n.custom-testimonios h1[data-v-782dcf83] {\n  text-align: center;\n  font-size: 20px;\n}\n.item-testimonio[data-v-782dcf83] {\n  min-height: 275px;\n}\n@media (max-width: 600px) {\n.item-testimonio[data-v-782dcf83] {\n    min-height: 450px;\n}\n}\n.item-testimonio .carousel-caption[data-v-782dcf83] {\n  display: flex;\n  height: 100%;\n}\n@media (max-width: 600px) {\n.item-testimonio .carousel-caption[data-v-782dcf83] {\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n}\n.item-testimonio .carousel-caption .left[data-v-782dcf83] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n.item-testimonio .carousel-caption .left .text[data-v-782dcf83] {\n  text-align: left;\n}\n@media (max-width: 600px) {\n.item-testimonio .carousel-caption .left .text[data-v-782dcf83] {\n    text-align: center;\n}\n}\n.item-testimonio .carousel-caption .left .text p[data-v-782dcf83] {\n  font-size: 18px;\n  color: black;\n}\n.item-testimonio .carousel-caption .left .img[data-v-782dcf83] {\n  display: flex;\n  align-items: center;\n}\n.item-testimonio .carousel-caption .left .img img[data-v-782dcf83] {\n  width: 45px;\n  height: 45px;\n  border-radius: 50%;\n  margin-bottom: 5px;\n}\n.item-testimonio .carousel-caption .left .img h3[data-v-782dcf83] {\n  margin-left: 15px;\n  font-size: 16px;\n  color: black;\n}\n.item-testimonio .carousel-caption .right[data-v-782dcf83] {\n  display: flex;\n  flex-direction: column;\n  min-width: 155px;\n}\n.item-testimonio .carousel-caption .right .stars i[data-v-782dcf83] {\n  color: orange;\n}\n.item-testimonio .carousel-caption .right p[data-v-782dcf83] {\n  color: black;\n  font-size: 14px;\n}\n.shake-texti[data-v-782dcf83] {\n  -webkit-animation: shake-data-v-782dcf83 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n          animation: shake-data-v-782dcf83 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n  transform: translate3d(0, 0, 0);\n}\n@media (max-width: 600px) {\n.shake-texti[data-v-782dcf83] {\n    -webkit-animation: shake-data-v-782dcf83 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n            animation: shake-data-v-782dcf83 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n    transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes shake-data-v-782dcf83 {\n10%, 90% {\n    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {\n    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {\n    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {\n    transform: translate3d(4px, 0, 0);\n}\n}\n@keyframes shake-data-v-782dcf83 {\n10%, 90% {\n    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {\n    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {\n    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {\n    transform: translate3d(4px, 0, 0);\n}\n}\n.contact[data-v-782dcf83] {\n  width: 100%;\n  text-align: center;\n  background-color: #bf4141;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px 0;\n}\n.contact p[data-v-782dcf83] {\n  margin-bottom: 0;\n  color: white;\n  font-size: 16px;\n}\n.contact p a[data-v-782dcf83] {\n  color: white;\n  font-size: 18px;\n  text-decoration: underline;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7805,7 +7902,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".profile-container[data-v-3bd692e4] {\n  overflow: hidden;\n}\n.profile-container .profile-navbar[data-v-3bd692e4] {\n  background-image: url(\"https://www.puertopixel.com/wp-content/uploads/2011/03/Fondos-web-Texturas-web-abtacto-32.jpg\");\n  background-position: center;\n  background-size: 100%;\n  height: 230px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.profile-container .profile-navbar .navbar-content[data-v-3bd692e4] {\n  position: relative;\n  width: 100%;\n}\n.profile-container .profile-navbar .navbar-content .navbar-info[data-v-3bd692e4] {\n  width: 100%;\n  text-align: center;\n  padding: 0 145px;\n}\n.profile-container .profile-navbar .navbar-content .navbar-info h1[data-v-3bd692e4] {\n  font-size: 52px;\n  text-transform: uppercase;\n  color: white;\n  font-family: \"Oswald\", sans-serif;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-info h1[data-v-3bd692e4] {\n    font-size: 24px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-info h3[data-v-3bd692e4] {\n  margin: 10px 0 20px;\n  color: #ffffff;\n  font-size: 24px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-info h3[data-v-3bd692e4] {\n    font-size: 14px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-icons[data-v-3bd692e4] {\n  position: absolute;\n  bottom: -40px;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.profile-container .profile-navbar .navbar-content .navbar-icons .icon[data-v-3bd692e4] {\n  background: rgba(0, 0, 0, 0.3);\n  width: 48px;\n  height: 48px;\n  border-radius: 50px;\n  color: #fff;\n  text-align: center;\n  line-height: 54px;\n  display: inline-block;\n  margin: 0px 3px;\n}\n.profile-container .profile-navbar .navbar-content .navbar-icons .icon span[data-v-3bd692e4] {\n  background-size: contain;\n  background-position: 50%;\n  background-repeat: no-repeat;\n  position: relative;\n  display: inline-block;\n  width: 28px;\n  line-height: 25px;\n  top: -3px;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n.profile-container .profile-navbar .navbar-content .navbar-left[data-v-3bd692e4] {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-left[data-v-3bd692e4] {\n    min-width: 75px;\n    height: 60px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-left .select[data-v-3bd692e4] {\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 98px;\n  min-width: 150px;\n  background-color: black;\n}\n.profile-container .profile-navbar .navbar-content .navbar-left .select .text[data-v-3bd692e4] {\n  font-size: 24px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-left .select .text[data-v-3bd692e4] {\n    font-size: 14px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-left .select svg[data-v-3bd692e4] {\n  fill: white !important;\n}\n.profile-container .profile-navbar .navbar-content .navbar-right[data-v-3bd692e4] {\n  position: absolute;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-right[data-v-3bd692e4] {\n    min-width: 75px;\n    height: 60px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-right .select[data-v-3bd692e4] {\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 98px;\n  min-width: 150px;\n  background-color: black;\n}\n.profile-container .profile-navbar .navbar-content .navbar-right .select .text[data-v-3bd692e4] {\n  font-size: 24px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-right .select .text[data-v-3bd692e4] {\n    font-size: 14px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-right .select svg[data-v-3bd692e4] {\n  fill: white !important;\n}\n.profile-container .profile-navbar .navbar-content .navbar-left:hover .h-left[data-v-3bd692e4] {\n  left: 0;\n}\n.profile-container .profile-navbar .navbar-content .navbar-right:hover .h-right[data-v-3bd692e4] {\n  right: 0;\n}\n.profile-container .profile-navbar .navbar-content .hover-img[data-v-3bd692e4] {\n  width: 440px;\n  height: 184px;\n  background-color: white;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n  padding: 20px 30px;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  border-radius: 4px;\n  display: flex;\n  justify-content: space-between;\n  transition: all 0.5s;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info[data-v-3bd692e4] {\n  display: block;\n  padding-bottom: 5px;\n  color: #cdcdcd;\n  text-transform: uppercase;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.2;\n  min-width: 120px;\n  font-family: \"Oswald\", sans-serif;\n  padding-left: 25px;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info span[data-v-3bd692e4] {\n  border-bottom: 2px solid #ab2d2d;\n  width: 100%;\n  display: block;\n  padding-bottom: 5px;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info h3[data-v-3bd692e4] {\n  margin: 0;\n  padding: 15px 0 10px;\n  color: #333333 !important;\n  font-weight: 300;\n  font-size: 1.3em;\n  line-height: 1.2;\n  font-family: \"Oswald\", sans-serif;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info p[data-v-3bd692e4] {\n  font-size: 0.8em;\n  line-height: 1.3em;\n  color: #777777;\n}\n.profile-container .profile-navbar .navbar-content .h-left[data-v-3bd692e4] {\n  left: -500px;\n}\n.profile-container .profile-navbar .navbar-content .h-right[data-v-3bd692e4] {\n  right: -500px;\n}\n.profile-container .carousel-photos[data-v-3bd692e4] {\n  padding: 0 !important;\n}\n.profile-container .carousel-photos .carousel .carousel-inner .carousel-item .item-photo img[data-v-3bd692e4] {\n  width: 100%;\n  height: 100%;\n}\n.profile-container .carousel-photos .carousel .carousel-indicators[data-v-3bd692e4] {\n  width: 50px;\n  margin: 0 auto;\n  background-color: white;\n  padding: 2px 5px;\n  border-radius: 5px;\n  margin-top: 50px;\n  bottom: -20px;\n  box-shadow: 0 -10px 15px -10px rgba(0, 0, 0, 0.7);\n}\n.profile-container .carousel-photos .carousel .carousel-indicators li[data-v-3bd692e4] {\n  height: 12px;\n  width: 12px;\n  border-radius: 50%;\n  background-color: black;\n}\n.profile-container .profile-info[data-v-3bd692e4] {\n  margin-top: 30px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.profile-container .profile-info .info-phills span[data-v-3bd692e4] {\n  background-color: #ab2d2d;\n  color: white;\n  font-weight: bold;\n  padding: 4px 8px;\n  border-radius: 8px;\n  margin: 0 3px;\n}\n.profile-container .profile-info .info-available[data-v-3bd692e4] {\n  padding: 25px 0;\n}\n.profile-container .profile-info .info-available__info[data-v-3bd692e4] {\n  display: flex;\n  background-color: #00ff00;\n  flex-direction: column;\n  justify-content: center;\n  padding: 6px 15px;\n  border-radius: 15px;\n  align-items: center;\n}\n.profile-container .profile-info .info-available__info p[data-v-3bd692e4] {\n  text-align: center;\n  margin: 0;\n}\n.profile-container .profile-info .info-detail[data-v-3bd692e4] {\n  width: 650px;\n  margin: 0 auto;\n  max-width: 100%;\n}\n.profile-container .profile-info .info-detail table[data-v-3bd692e4] {\n  max-width: 100%;\n}\n.profile-container .profile-info .info-detail .llamada[data-v-3bd692e4] {\n  display: flex;\n  justify-content: center;\n}\n.profile-container .profile-info .info-detail .llamada a[data-v-3bd692e4] {\n  margin: 0 15px;\n}\n.profile-container .profile-info .info-services[data-v-3bd692e4] {\n  width: 650px;\n  margin: 0 auto;\n  max-width: 100%;\n}\n.profile-container .profile-info .info-services__content .title[data-v-3bd692e4] {\n  color: #ab2d2d;\n  text-align: center;\n}\n.profile-container .profile-info .info-services__content .list-services[data-v-3bd692e4] {\n  padding: 25px 5px;\n  border-radius: 5px;\n}\n.profile-container .profile-info .info-services__content .list-services span[data-v-3bd692e4] {\n  padding: 4px 8px;\n  margin: 5px;\n  background-color: #e9e9e9 !important;\n  border-radius: 3px;\n}\n.profile-container .profile-info .info-services__content .list-services span i[data-v-3bd692e4] {\n  color: #ab2d2d;\n}\n.profile-container .profile-info .info-video[data-v-3bd692e4] {\n  width: 650px;\n  max-width: 100%;\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-info .info-video[data-v-3bd692e4] {\n    margin-top: 10px;\n}\n}\n.profile-container .profile-info .info-video .video[data-v-3bd692e4] {\n  max-width: 100%;\n}\n.profile-container .profile-info .info-description[data-v-3bd692e4] {\n  margin-top: 50px;\n  max-width: 650px;\n}\n.profile-container .profile-info .info-description .title h3[data-v-3bd692e4] {\n  text-align: center;\n  color: #ab2d2d;\n  font-weight: 600;\n}\n.profile-container .profile-info .info-description .description-content[data-v-3bd692e4] {\n  text-align: center;\n}\n.profile-container .profile-info .info-description .description-content .name[data-v-3bd692e4] {\n  font-weight: 20px;\n  font-weight: 600;\n  margin-bottom: 5px;\n}\n.profile-container .profile-info .info-description .description-content .name span[data-v-3bd692e4] {\n  color: #ab2d2d;\n}\n.profile-container .profile-info .info-description .description-content .whats[data-v-3bd692e4] {\n  display: block;\n  margin: 0 auto;\n  font-size: 46px;\n}\n.profile-container .profile-info .info-description .description-content .whats i[data-v-3bd692e4] {\n  color: green;\n}\n.profile-container .profile-info .info-recommend[data-v-3bd692e4] {\n  max-width: 600px;\n  margin: 0 auto;\n  margin-top: 50px;\n}\n.profile-container .profile-info .info-recommend .recommend-content .title[data-v-3bd692e4] {\n  text-align: center;\n  color: #ab2d2d;\n  font-weight: 600;\n}\n.recommend-list__item[data-v-3bd692e4] {\n  padding: 50px !important;\n}\n@media (max-width: 600px) {\n.recommend-list__item[data-v-3bd692e4] {\n    padding: 25px !important;\n}\n}\n@media (max-width: 600px) {\n.shake-text[data-v-3bd692e4] {\n    -webkit-animation: shake-data-v-3bd692e4 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n            animation: shake-data-v-3bd692e4 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n    transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes shake-data-v-3bd692e4 {\n10%, 90% {\n    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {\n    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {\n    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {\n    transform: translate3d(4px, 0, 0);\n}\n}\n@keyframes shake-data-v-3bd692e4 {\n10%, 90% {\n    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {\n    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {\n    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {\n    transform: translate3d(4px, 0, 0);\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".profile-container[data-v-3bd692e4] {\n  overflow: hidden;\n}\n.profile-container .profile-navbar[data-v-3bd692e4] {\n  background-image: url(\"https://www.puertopixel.com/wp-content/uploads/2011/03/Fondos-web-Texturas-web-abtacto-32.jpg\");\n  background-position: center;\n  background-size: 100%;\n  height: 230px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.profile-container .profile-navbar .navbar-content[data-v-3bd692e4] {\n  position: relative;\n  width: 100%;\n}\n.profile-container .profile-navbar .navbar-content .navbar-info[data-v-3bd692e4] {\n  width: 100%;\n  text-align: center;\n  padding: 0 145px;\n}\n.profile-container .profile-navbar .navbar-content .navbar-info h1[data-v-3bd692e4] {\n  font-size: 52px;\n  text-transform: uppercase;\n  color: white;\n  font-family: \"Oswald\", sans-serif;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-info h1[data-v-3bd692e4] {\n    font-size: 24px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-info h3[data-v-3bd692e4] {\n  margin: 10px 0 20px;\n  color: #ffffff;\n  font-size: 24px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-info h3[data-v-3bd692e4] {\n    font-size: 14px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-icons[data-v-3bd692e4] {\n  position: absolute;\n  bottom: -40px;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.profile-container .profile-navbar .navbar-content .navbar-icons .icon[data-v-3bd692e4] {\n  background: rgba(0, 0, 0, 0.3);\n  width: 48px;\n  height: 48px;\n  border-radius: 50px;\n  color: #fff;\n  text-align: center;\n  line-height: 54px;\n  display: inline-block;\n  margin: 0px 3px;\n}\n.profile-container .profile-navbar .navbar-content .navbar-icons .icon span[data-v-3bd692e4] {\n  background-size: contain;\n  background-position: 50%;\n  background-repeat: no-repeat;\n  position: relative;\n  display: inline-block;\n  width: 28px;\n  line-height: 25px;\n  top: -3px;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n.profile-container .profile-navbar .navbar-content .navbar-left[data-v-3bd692e4] {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-left[data-v-3bd692e4] {\n    min-width: 75px;\n    height: 60px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-left .select[data-v-3bd692e4] {\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 98px;\n  min-width: 150px;\n  background-color: black;\n}\n.profile-container .profile-navbar .navbar-content .navbar-left .select .text[data-v-3bd692e4] {\n  font-size: 24px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-left .select .text[data-v-3bd692e4] {\n    font-size: 14px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-left .select svg[data-v-3bd692e4] {\n  fill: white !important;\n}\n.profile-container .profile-navbar .navbar-content .navbar-right[data-v-3bd692e4] {\n  position: absolute;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-right[data-v-3bd692e4] {\n    min-width: 75px;\n    height: 60px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-right .select[data-v-3bd692e4] {\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 98px;\n  min-width: 150px;\n  background-color: black;\n}\n.profile-container .profile-navbar .navbar-content .navbar-right .select .text[data-v-3bd692e4] {\n  font-size: 24px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-navbar .navbar-content .navbar-right .select .text[data-v-3bd692e4] {\n    font-size: 14px;\n}\n}\n.profile-container .profile-navbar .navbar-content .navbar-right .select svg[data-v-3bd692e4] {\n  fill: white !important;\n}\n.profile-container .profile-navbar .navbar-content .navbar-left:hover .h-left[data-v-3bd692e4] {\n  left: 0;\n}\n.profile-container .profile-navbar .navbar-content .navbar-right:hover .h-right[data-v-3bd692e4] {\n  right: 0;\n}\n.profile-container .profile-navbar .navbar-content .hover-img[data-v-3bd692e4] {\n  width: 440px;\n  height: 184px;\n  background-color: white;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n  padding: 20px 30px;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  border-radius: 4px;\n  display: flex;\n  justify-content: space-between;\n  transition: all 0.5s;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info[data-v-3bd692e4] {\n  display: block;\n  padding-bottom: 5px;\n  color: #cdcdcd;\n  text-transform: uppercase;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.2;\n  min-width: 120px;\n  font-family: \"Oswald\", sans-serif;\n  padding-left: 25px;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info span[data-v-3bd692e4] {\n  border-bottom: 2px solid #ab2d2d;\n  width: 100%;\n  display: block;\n  padding-bottom: 5px;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info h3[data-v-3bd692e4] {\n  margin: 0;\n  padding: 15px 0 10px;\n  color: #333333 !important;\n  font-weight: 300;\n  font-size: 1.3em;\n  line-height: 1.2;\n  font-family: \"Oswald\", sans-serif;\n}\n.profile-container .profile-navbar .navbar-content .hover-img .hover-info p[data-v-3bd692e4] {\n  font-size: 0.8em;\n  line-height: 1.3em;\n  color: #777777;\n}\n.profile-container .profile-navbar .navbar-content .h-left[data-v-3bd692e4] {\n  left: -500px;\n}\n.profile-container .profile-navbar .navbar-content .h-right[data-v-3bd692e4] {\n  right: -500px;\n}\n.profile-container .carousel-photos[data-v-3bd692e4] {\n  padding: 0 !important;\n}\n.profile-container .carousel-photos .carousel .carousel-inner .carousel-item .item-photo img[data-v-3bd692e4] {\n  width: 100%;\n  height: 100%;\n}\n.profile-container .carousel-photos .carousel .carousel-indicators[data-v-3bd692e4] {\n  width: 50px;\n  margin: 0 auto;\n  background-color: white;\n  padding: 2px 5px;\n  border-radius: 5px;\n  margin-top: 50px;\n  bottom: -20px;\n  box-shadow: 0 -10px 15px -10px rgba(0, 0, 0, 0.7);\n}\n.profile-container .carousel-photos .carousel .carousel-indicators li[data-v-3bd692e4] {\n  height: 12px;\n  width: 12px;\n  border-radius: 50%;\n  background-color: black;\n}\n.profile-container .profile-info[data-v-3bd692e4] {\n  margin-top: 30px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.profile-container .profile-info .info-phills span[data-v-3bd692e4] {\n  background-color: #ab2d2d;\n  color: white;\n  font-weight: bold;\n  padding: 4px 8px;\n  border-radius: 8px;\n  margin: 0 3px;\n}\n.profile-container .profile-info .info-available[data-v-3bd692e4] {\n  padding: 25px 0;\n}\n.profile-container .profile-info .info-available__info[data-v-3bd692e4] {\n  display: flex;\n  background-color: #00ff00;\n  flex-direction: column;\n  justify-content: center;\n  padding: 6px 15px;\n  border-radius: 15px;\n  align-items: center;\n}\n.profile-container .profile-info .info-available__info p[data-v-3bd692e4] {\n  text-align: center;\n  margin: 0;\n}\n.profile-container .profile-info .info-detail[data-v-3bd692e4] {\n  width: 650px;\n  margin: 0 auto;\n  max-width: 100%;\n}\n.profile-container .profile-info .info-detail table[data-v-3bd692e4] {\n  max-width: 100%;\n}\n.profile-container .profile-info .info-detail .llamada[data-v-3bd692e4] {\n  display: flex;\n  justify-content: center;\n}\n.profile-container .profile-info .info-detail .llamada a[data-v-3bd692e4] {\n  margin: 0 15px;\n}\n.profile-container .profile-info .info-services[data-v-3bd692e4] {\n  width: 650px;\n  margin: 0 auto;\n  max-width: 100%;\n}\n.profile-container .profile-info .info-services__content .title[data-v-3bd692e4] {\n  color: #ab2d2d;\n  text-align: center;\n}\n.profile-container .profile-info .info-services__content .list-services[data-v-3bd692e4] {\n  padding: 25px 5px;\n  border-radius: 5px;\n}\n.profile-container .profile-info .info-services__content .list-services span[data-v-3bd692e4] {\n  padding: 4px 8px;\n  margin: 5px;\n  background-color: #e9e9e9 !important;\n  border-radius: 3px;\n}\n.profile-container .profile-info .info-services__content .list-services span i[data-v-3bd692e4] {\n  color: #ab2d2d;\n}\n.profile-container .profile-info .info-video[data-v-3bd692e4] {\n  width: 650px;\n  max-width: 100%;\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n@media (max-width: 600px) {\n.profile-container .profile-info .info-video[data-v-3bd692e4] {\n    margin-top: 10px;\n}\n}\n.profile-container .profile-info .info-video .video[data-v-3bd692e4] {\n  max-width: 100%;\n}\n.profile-container .profile-info .info-description[data-v-3bd692e4] {\n  margin-top: 50px;\n  max-width: 650px;\n}\n.profile-container .profile-info .info-description .title h3[data-v-3bd692e4] {\n  text-align: center;\n  color: #ab2d2d;\n  font-weight: 600;\n}\n.profile-container .profile-info .info-description .description-content[data-v-3bd692e4] {\n  text-align: center;\n}\n.profile-container .profile-info .info-description .description-content .name[data-v-3bd692e4] {\n  font-weight: 20px;\n  font-weight: 600;\n  margin-bottom: 5px;\n}\n.profile-container .profile-info .info-description .description-content .name span[data-v-3bd692e4] {\n  color: #ab2d2d;\n}\n.profile-container .profile-info .info-description .description-content .whats[data-v-3bd692e4] {\n  display: block;\n  margin: 0 auto;\n  font-size: 46px;\n}\n.profile-container .profile-info .info-description .description-content .whats i[data-v-3bd692e4] {\n  color: green;\n}\n.profile-container .profile-info .info-recommend[data-v-3bd692e4] {\n  max-width: 600px;\n  margin: 0 auto;\n  margin-top: 50px;\n}\n.profile-container .profile-info .info-recommend .recommend-content .title[data-v-3bd692e4] {\n  text-align: center;\n  color: #ab2d2d;\n  font-weight: 600;\n}\n.recommend-list__item[data-v-3bd692e4] {\n  padding: 50px !important;\n}\n@media (max-width: 600px) {\n.recommend-list__item[data-v-3bd692e4] {\n    padding: 25px !important;\n}\n}\n.shake-text[data-v-3bd692e4] {\n  -webkit-animation: shake-data-v-3bd692e4 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n          animation: shake-data-v-3bd692e4 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n  transform: translate3d(0, 0, 0);\n}\n@media (max-width: 600px) {\n.shake-text[data-v-3bd692e4] {\n    -webkit-animation: shake-data-v-3bd692e4 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n            animation: shake-data-v-3bd692e4 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;\n    transform: translate3d(0, 0, 0);\n}\n}\n@-webkit-keyframes shake-data-v-3bd692e4 {\n10%, 90% {\n    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {\n    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {\n    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {\n    transform: translate3d(4px, 0, 0);\n}\n}\n@keyframes shake-data-v-3bd692e4 {\n10%, 90% {\n    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {\n    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {\n    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {\n    transform: translate3d(4px, 0, 0);\n}\n}\n.modal-custom[data-v-3bd692e4] {\n  background-color: rgba(0, 0, 0, 0.6);\n}\n.modal-custom .close-modal-c[data-v-3bd692e4] {\n  border: none;\n  background-color: black;\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n  position: absolute;\n  width: 30px;\n  height: 30px;\n  right: 0;\n  top: 0;\n}\n.modal-custom-cont .slide .carousel-inner[data-v-3bd692e4] {\n  padding: 75px 50px;\n}\n.modal-custom-cont .slide .carousel-inner .carousel-item[data-v-3bd692e4] {\n  padding: 75px 50px;\n}\n.logo-cont[data-v-3bd692e4] {\n  padding: 15px;\n  text-align: center;\n}\n.logo-cont a img[data-v-3bd692e4] {\n  height: 45px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40284,6 +40381,8 @@ var render = function() {
     [
       _c("searchbar-component"),
       _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "container-carousel" },
@@ -40308,6 +40407,44 @@ var render = function() {
                   staticClass: "carousel-ultimas__item multi-carousel-item"
                 },
                 [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "shake-texti",
+                      staticStyle: {
+                        position: "absolute",
+                        top: "0px",
+                        background: "black",
+                        "border-radius": "3px",
+                        padding: "0 2px"
+                      }
+                    },
+                    [
+                      _c("div", {
+                        staticStyle: {
+                          display: "inline-block",
+                          "background-color": "green",
+                          width: "8px",
+                          height: "8px",
+                          "border-radius": "50%"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "live",
+                          staticStyle: {
+                            "fonst-size": "10px",
+                            color: "white",
+                            display: "inline-block"
+                          }
+                        },
+                        [_vm._v("LIVE")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
                   _c("a", { staticClass: "item-link", attrs: { href: "" } }, [
                     _c("div", { staticClass: "item-link__img" }, [
                       _c("img", {
@@ -40358,7 +40495,7 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "card-item__header" }, [
-                  _vm._m(0, true),
+                  _vm._m(1, true),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-item__header--place" }, [
                     _c("p", [
@@ -40422,31 +40559,27 @@ var render = function() {
                     _c(
                       "svg",
                       {
-                        staticStyle: {
-                          fill: "rgba(255, 255, 255, 1)",
-                          transform: ""
-                        },
                         attrs: {
                           xmlns: "http://www.w3.org/2000/svg",
-                          width: "20",
-                          height: "20",
                           viewBox: "0 0 24 24"
                         }
                       },
                       [
                         _c("path", {
                           attrs: {
+                            fill: "#ffffff",
+                            width: "20",
                             d:
-                              "M18 7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-3.333L22 17V7l-4 3.333V7z"
+                              "M21.53,7.15a1,1,0,0,0-1,0L17,8.89A3,3,0,0,0,14,6H5A3,3,0,0,0,2,9v6a3,3,0,0,0,3,3h9a3,3,0,0,0,3-2.89l3.56,1.78A1,1,0,0,0,21,17a1,1,0,0,0,.53-.15A1,1,0,0,0,22,16V8A1,1,0,0,0,21.53,7.15ZM15,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V9A1,1,0,0,1,5,8h9a1,1,0,0,1,1,1Zm5-.62-3-1.5V11.12l3-1.5Z"
                           }
                         })
                       ]
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(1, true),
-                  _vm._v(" "),
                   _vm._m(2, true),
+                  _vm._v(" "),
+                  _vm._m(3, true),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -40499,7 +40632,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "card-item__body" }, [
                   _c("div", { staticClass: "body-profile" }, [
-                    _vm._m(3, true),
+                    _vm._m(4, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "profile-contact" }, [
                       _c("p", [
@@ -40565,14 +40698,186 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(4),
+      _c("div", { staticClass: "container-custom" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "custom-testimonios d-flex flex-column content-testimonio w-100"
+          },
+          [
+            _c("h1", { staticClass: "text-center" }, [_vm._v("TESTIMONIOS")]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "carousel slide carousel-testimonio",
+                attrs: {
+                  id: "testimonio",
+                  "data-ride": "carousel",
+                  "data-interval": "3500"
+                }
+              },
+              [
+                _vm._m(5),
+                _vm._v(" "),
+                _c("div", { staticClass: "carousel-inner" }, [
+                  _c(
+                    "div",
+                    { staticClass: "carousel-item item-testimonio active" },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "carousel-caption hidden-xs fadeInDown animated"
+                        },
+                        [
+                          _c("div", { staticClass: "left" }, [
+                            _vm._m(6),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "img" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: _vm.url_img("/images/user.png"),
+                                  alt: ""
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("h3", [_vm._v("- Daniel Romero")])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(7)
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item item-testimonio" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption hidden-xs fadeInDown animated"
+                      },
+                      [
+                        _c("div", { staticClass: "left" }, [
+                          _vm._m(8),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "img" }, [
+                            _c("img", {
+                              attrs: {
+                                src: _vm.url_img("/images/user.png"),
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("h3", [_vm._v("- Lucio gallegos")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(9)
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item item-testimonio" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption hidden-xs fadeInDown animated"
+                      },
+                      [
+                        _c("div", { staticClass: "left" }, [
+                          _vm._m(10),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "img" }, [
+                            _c("img", {
+                              attrs: {
+                                src: _vm.url_img("/images/user.png"),
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("h3", [_vm._v("- Damian Gomez")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(11)
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item item-testimonio" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption hidden-xs fadeInDown animated"
+                      },
+                      [
+                        _c("div", { staticClass: "left" }, [
+                          _vm._m(12),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "img" }, [
+                            _c("img", {
+                              attrs: {
+                                src: _vm.url_img("/images/user.png"),
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("h3", [_vm._v("- Matias Fernandez")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(13)
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item item-testimonio" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption hidden-xs fadeInDown animated"
+                      },
+                      [
+                        _c("div", { staticClass: "left" }, [
+                          _vm._m(14),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "img" }, [
+                            _c("img", {
+                              attrs: {
+                                src: _vm.url_img("/images/user.png"),
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("h3", [_vm._v("- Julio Butamante")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(15)
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ]
+        )
+      ]),
       _vm._v(" "),
       _vm.accept
         ? _c("div", { staticClass: "modal-custom" }, [
             _c("div", { staticClass: "modal-c modal-content" }, [
-              _vm._m(5),
+              _vm._m(16),
               _vm._v(" "),
-              _vm._m(6),
+              _vm._m(17),
               _vm._v(" "),
               _c(
                 "div",
@@ -40613,6 +40918,27 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "contact" }, [
+      _c("p", [
+        _vm._v("\n      ¿ Quieres contactar\n      "),
+        _c(
+          "a",
+          {
+            attrs: {
+              href:
+                "https://wa.me/51944068975?text=Hola%quiero%anunciar%20en%Placeres%Arequipa"
+            }
+          },
+          [_vm._v("944068975")]
+        ),
+        _vm._v(" ?\n    ")
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -40664,245 +40990,193 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-custom" }, [
-      _c(
-        "div",
-        { staticClass: "d-flex flex-column content-testimonio w-100" },
-        [
-          _c("h1", { staticClass: "text-center" }, [
-            _c("i", { staticClass: "fa fa-heart" }),
-            _vm._v(" TESTIMONIOS\n        "),
-            _c("i", { staticClass: "fa fa-heart" })
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "carousel slide carousel-testimonio",
-              attrs: {
-                id: "testimonio",
-                "data-ride": "carousel",
-                "data-interval": "1500"
-              }
-            },
-            [
-              _c(
-                "ul",
-                {
-                  staticClass:
-                    "list-unstyled carousel-indicators indicators-testimonio"
-                },
-                [
-                  _c("li", {
-                    attrs: {
-                      "data-target": "#testimonio",
-                      "data-slide-to": "0"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("li", {
-                    attrs: {
-                      "data-target": "#testimonio",
-                      "data-slide-to": "1"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("li", {
-                    staticClass: "active",
-                    attrs: {
-                      "data-target": "#testimonio",
-                      "data-slide-to": "2"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("li", {
-                    attrs: {
-                      "data-target": "#testimonio",
-                      "data-slide-to": "3"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("li", {
-                    attrs: {
-                      "data-target": "#testimonio",
-                      "data-slide-to": "4"
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-inner" }, [
-                _c("div", { staticClass: "carousel-item" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://placeresdearequipa.com/imagen/fondo.png"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "carousel-caption hidden-xs fadeInDown animated"
-                    },
-                    [
-                      _c("h1", [
-                        _c("i", [
-                          _c("span", [
-                            _vm._v("La mejor pagina de escorts del PERU")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("hr", { staticClass: "my-0" }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Aqui encontraras anuncios de kinesiólogas A1. Sexo delivery.Kinesiólogas en Arequipa, Escorts independientes del PERU, sexo con kinesiólogas del PERU. Culonas, tetonas, jovenictas, maduritas. Encuentra la mejor forma de contactar con kinesiólogas y Damas de compañia"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("- Lucio gallegos-")])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "carousel-item" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://placeresdearequipa.com/imagen/fondo.png"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "carousel-caption hidden-xs fadeInDown animated"
-                    },
-                    [
-                      _c("h1", [
-                        _c("i", [
-                          _c("span", [
-                            _vm._v("Contacto con Kinesiólogas - Escorts")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("hr", { staticClass: "my-0" }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "A la hora de conocer mujeres puedes recurrir a bares,discotekas,webs. placeresdearequipa es un portal de anuncios eroticos que tan solo hacer un click, puedes acceder a un enorme listado de Kinesiólogas,Escorts o mujeres liberales,dispuestas a tener relaciones esporadicas. Si buscas sexo ahora con chicas no profesionales, en pagina placeresdearequipa encontaras un enorme variedad de mujeres jovencitas, con las que podras quedar hoy mismo si asi lo deseas."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("-Matias Fernandez-")])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "carousel-item" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://placeresdearequipa.com/imagen/fondo.png"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "carousel-caption hidden-xs fadeInDown animated"
-                    },
-                    [
-                      _c("h1", [
-                        _c("i", [
-                          _c("span", [_vm._v("Escorts Kinesiólogas del PERU")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("hr", { staticClass: "my-0" }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Selecciona entre los anuncios que publican diariamente Kinesiólogas, Escorts. Fotos reales 100% de kinesiólogas, escorts. Disfruta el placer y la pasion de Kinesiologas economicas que se anuncian en esta pagina. Fotos de kinesiologas, escorts. Enviales un whatsapp a estas kinesiólogas Arequipa para pedirle una cita."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("-Damian-")])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "carousel-item" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://placeresdearequipa.com/imagen/fondo.png"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "carousel-caption hidden-xs fadeInDown animated"
-                    },
-                    [
-                      _c("h1", [
-                        _c("i", [
-                          _c("span", [_vm._v("Hermosas Kinesiólogas,Escorts")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("hr", { staticClass: "my-0" }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Muy buenas y hermosas Escorts,Kinesiólogas cada una de estas Kinesiólogas son lindas mujeres peruanas. Es la mejor seleccion de Damas de compañia que existe en el PERU."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("-Julio Butamante-")])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "carousel-item active" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://placeresdearequipa.com/imagen/fondo.png"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "carousel-caption hidden-xs fadeInDown animated"
-                    },
-                    [
-                      _c("h1", [
-                        _c("i", [_c("span", [_vm._v("placeresdearequipa")])])
-                      ]),
-                      _vm._v(" "),
-                      _c("hr", { staticClass: "my-0" }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Sin lugar a duda es la mejor pagina de Escorts, Kinesiólogas. Paro de viaje por motivos de negocio y todas noches durante 4 dias estube llamando a algunas kines vip, y tube la mejor experiencia por medio de la pagina placeresdearequipa.com"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("-Daniel-")])
-                    ]
-                  )
-                ])
-              ])
-            ]
-          )
-        ]
-      )
+    return _c(
+      "ul",
+      {
+        staticClass: "list-unstyled carousel-indicators indicators-testimonio"
+      },
+      [
+        _c("li", {
+          staticClass: "active",
+          attrs: { "data-target": "#testimonio", "data-slide-to": "0" }
+        }),
+        _vm._v(" "),
+        _c("li", {
+          attrs: { "data-target": "#testimonio", "data-slide-to": "1" }
+        }),
+        _vm._v(" "),
+        _c("li", {
+          attrs: { "data-target": "#testimonio", "data-slide-to": "2" }
+        }),
+        _vm._v(" "),
+        _c("li", {
+          attrs: { "data-target": "#testimonio", "data-slide-to": "3" }
+        }),
+        _vm._v(" "),
+        _c("li", {
+          attrs: { "data-target": "#testimonio", "data-slide-to": "4" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text" }, [
+      _c("p", [
+        _vm._v(
+          "Sin lugar a duda es la mejor pagina de Escorts, Kinesiólogas. Paro de viaje por motivos de negocio y todas noches durante 4 dias estube llamando a algunas kines vip, y tube la mejor experiencia por medio de la pagina placeresdearequipa.com"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right" }, [
+      _c("div", { staticClass: "stars" }, [
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" })
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Puntaje 5 / 5")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text" }, [
+      _c("p", [
+        _vm._v(
+          "Aqui encontraras anuncios de kinesiólogas A1. Sexo delivery.Kinesiólogas en Arequipa, Escorts independientes del PERU, sexo con kinesiólogas del PERU. Culonas, tetonas, jovenictas, maduritas. Encuentra la mejor forma de contactar con kinesiólogas y Damas de compañia"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right" }, [
+      _c("div", { staticClass: "stars" }, [
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" })
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Puntaje 5 / 5")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text" }, [
+      _c("p", [
+        _vm._v(
+          "Selecciona entre los anuncios que publican diariamente Kinesiólogas, Escorts. Fotos reales 100% de kinesiólogas, escorts. Disfruta el placer y la pasion de Kinesiologas economicas que se anuncian en esta pagina. Fotos de kinesiologas, escorts. Enviales un whatsapp a estas kinesiólogas Arequipa para pedirle una cita."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right" }, [
+      _c("div", { staticClass: "stars" }, [
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" })
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Puntaje 5 / 5")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text" }, [
+      _c("p", [
+        _vm._v(
+          "A la hora de conocer mujeres puedes recurrir a bares,discotekas,webs. placeresdearequipa es un portal de anuncios eroticos que tan solo hacer un click, puedes acceder a un enorme listado de Kinesiólogas,Escorts o mujeres liberales,dispuestas a tener relaciones esporadicas. Si buscas sexo ahora con chicas no profesionales, en pagina placeresdearequipa encontaras un enorme variedad de mujeres jovencitas, con las que podras quedar hoy mismo si asi lo deseas."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right" }, [
+      _c("div", { staticClass: "stars" }, [
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" })
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Puntaje 5 / 5")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text" }, [
+      _c("p", [
+        _vm._v(
+          "Muy buenas y hermosas Escorts,Kinesiólogas cada una de estas Kinesiólogas son lindas mujeres peruanas. Es la mejor seleccion de Damas de compañia que existe en el PERU."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right" }, [
+      _c("div", { staticClass: "stars" }, [
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-star" })
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Puntaje 5 / 5")])
     ])
   },
   function() {
@@ -41027,6 +41301,14 @@ var render = function() {
     "div",
     { staticClass: "profile-container" },
     [
+      _c("div", { staticClass: "logo-cont" }, [
+        _c("a", { attrs: { href: _vm.url_base } }, [
+          _c("img", {
+            attrs: { src: _vm.url_img("/images/logoAQP.png"), alt: "" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", {}, [
         _c("div", { staticClass: "profile-navbar" }, [
           _c("div", { staticClass: "navbar-content" }, [
@@ -41107,7 +41389,12 @@ var render = function() {
                   [
                     _c("img", {
                       staticClass: "w-100",
-                      attrs: { src: _vm.url_img(item), alt: "Gallery image 1" }
+                      attrs: { src: _vm.url_img(item), alt: "Gallery image 1" },
+                      on: {
+                        click: function($event) {
+                          return _vm.openModal()
+                        }
+                      }
                     })
                   ]
                 )
@@ -41217,7 +41504,87 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("footer-component")
+      _c("footer-component"),
+      _vm._v(" "),
+      _vm.showModal
+        ? _c(
+            "div",
+            {
+              staticClass: "modal-custom",
+              on: {
+                keyup: function($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "esc", 27, $event.key, [
+                      "Esc",
+                      "Escape"
+                    ])
+                  ) {
+                    return null
+                  }
+                  return _vm.closeModal()
+                }
+              }
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "close-modal-c",
+                  on: {
+                    click: function($event) {
+                      return _vm.closeModal()
+                    }
+                  }
+                },
+                [_vm._v("X")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-custom-cont" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "carousel slide",
+                    attrs: { id: "carouselIdaaa", "data-ride": "carousel" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-inner",
+                        attrs: { role: "listbox" }
+                      },
+                      _vm._l(_vm.imgs, function(item, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "carousel-item",
+                            class: { active: index == 0 }
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "h-100",
+                              attrs: {
+                                src: _vm.url_img(item),
+                                alt: "Gallery image 1"
+                              }
+                            })
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _vm._m(10),
+                    _vm._v(" "),
+                    _vm._m(11)
+                  ]
+                )
+              ])
+            ]
+          )
+        : _vm._e()
     ],
     1
   )
@@ -41244,7 +41611,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "hover-info" }, [
           _c("span", { staticClass: "single-pop-np" }, [
-            _vm._v("Siguiente modelo")
+            _vm._v("Anterior modelo")
           ]),
           _vm._v(" "),
           _c("h3", [_vm._v("KASANDRA")]),
@@ -41652,6 +42019,46 @@ var staticRenderFns = [
             _c("p")
           ]
         )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: { href: "#carouselIdaaa", role: "button", "data-slide": "prev" }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-next",
+        attrs: { href: "#carouselIdaaa", role: "button", "data-slide": "next" }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
       ]
     )
   }

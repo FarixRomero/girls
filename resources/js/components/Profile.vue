@@ -1,5 +1,10 @@
 <template>
   <div class="profile-container">
+    <div class="logo-cont">
+      <a :href="url_base">
+        <img :src="url_img('/images/logoAQP.png')" alt />
+      </a>
+    </div>
     <div class>
       <div class="profile-navbar">
         <div class="navbar-content">
@@ -22,7 +27,7 @@
                 alt="Kasandra 979792566, escorts en Lima"
               />
               <div class="hover-info">
-                <span class="single-pop-np">Siguiente modelo</span>
+                <span class="single-pop-np">Anterior modelo</span>
                 <h3>KASANDRA</h3>
                 <p class="adsub">Encantadora joven venezolana muy linda y de aspecto recatado</p>
               </div>
@@ -73,7 +78,7 @@
       <div class="carousel-photos container-fluid">
         <carousel :responsive="{0:{items:1,nav:false},600:{items:5,nav:false}}">
           <div v-for="(item,index) in imgs" :key="index" class="multi-carousel-item">
-            <img :src="url_img(item)" alt="Gallery image 1" class="w-100" />
+            <img @click="openModal()" :src="url_img(item)" alt="Gallery image 1" class="w-100" />
           </div>
         </carousel>
       </div>
@@ -307,6 +312,31 @@
       </div>
     </div>
     <footer-component></footer-component>
+    <div class="modal-custom" v-if="showModal" @keyup.esc="closeModal()">
+      <button class="close-modal-c" @click="closeModal()">X</button>
+      <div class="modal-custom-cont">
+        <div id="carouselIdaaa" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div
+              v-for="(item,index) in imgs"
+              :key="index"
+              class="carousel-item"
+              :class="{ 'active':index == 0}"
+            >
+              <img :src="url_img(item)" alt="Gallery image 1" class="h-100" />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselIdaaa" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselIdaaa" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -317,7 +347,7 @@ export default {
   data() {
     return {
       url: " ",
-
+      showModal: false,
       imgs: [
         "/images/chicas/1.jpeg",
         "/images/chicas/2.jpeg",
@@ -342,6 +372,12 @@ export default {
   methods: {
     url_img(a) {
       return this.url_base + a;
+    },
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
     },
   },
   computed: {
@@ -737,6 +773,8 @@ export default {
 }
 
 .shake-text {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  transform: translate3d(0, 0, 0);
   @media (max-width: 600px) {
     animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
     transform: translate3d(0, 0, 0);
@@ -762,6 +800,41 @@ export default {
   40%,
   60% {
     transform: translate3d(4px, 0, 0);
+  }
+}
+.modal-custom {
+  background-color: rgba(0, 0, 0, 0.6);
+  // position: relative;
+  .close-modal-c {
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    top: 0;
+  }
+  &-cont {
+    .slide {
+      .carousel-inner {
+        padding: 75px 50px;
+        .carousel-item {
+          padding: 75px 50px;
+        }
+      }
+    }
+  }
+}
+.logo-cont {
+  padding: 15px;
+  text-align: center;
+  a {
+    img {
+      height: 45px;
+    }
   }
 }
 </style>

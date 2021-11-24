@@ -10208,6 +10208,9 @@ h3 {
   align-items: center;
   justify-content: center;
 }
+.card-item__background .video svg {
+  width: 24px;
+}
 .card-item__background .new {
   height: 100px;
   overflow: hidden;
@@ -10419,7 +10422,6 @@ h3 {
 }
 
 .content-testimonio {
-  background-image: url("https://placeresdearequipa.com/imagen/fondo-web.jpg");
   border-top: 5px solid #fff;
   border-bottom: 5px solid #fff;
   padding: 10px 0px;
